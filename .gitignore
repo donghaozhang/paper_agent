@@ -1,0 +1,25 @@
+# Ignore API key files
+run_paper_custom.ps1
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+*.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE files
+.idea/
+.vscode/
+
+# LaTeX temporary files
+*.aux
+*.log
+*.blg
+*.out
+*.toc
