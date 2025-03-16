@@ -6,7 +6,7 @@ A framework for automated academic paper writing using AI agents and templates.
 
 Paper Agent uses specialized AI agents to compose research papers by generating different sections (introduction, methodology, experiments, results, etc.) in a structured manner. It supports multiple research fields and manages the complete paper generation process.
 
-![Vector Quantization Example](vq_example.gif)
+<img src="vq_example.gif" alt="Vector Quantization Example" width="500"/>
 
 *Above: Example of a paper generated with the Vector Quantization model*
 
