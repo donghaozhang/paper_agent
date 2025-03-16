@@ -1,0 +1,29 @@
+# Core dependencies
+openai==1.13.3
+anthropic==0.8.1
+google-generativeai==0.3.2
+langchain==0.0.267
+transformers==4.35.0
+tiktoken==0.5.2
+
+# Utilities
+tqdm==4.66.1
+numpy==1.24.3
+pandas==2.0.3
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# ML libraries for model implementations
+torch==2.0.1
+torchvision==0.15.2
+
+# For async operations
+aiohttp==3.9.1
+asyncio==3.4.3
+
+# For logging and formatting
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# For LaTeX processing
+pylatex==1.4.1 

@@ -6,6 +6,10 @@ A framework for automated academic paper writing using AI agents and templates.
 
 Paper Agent uses specialized AI agents to compose research papers by generating different sections (introduction, methodology, experiments, results, etc.) in a structured manner. It supports multiple research fields and manages the complete paper generation process.
 
+![Vector Quantization Example](vq_example.gif)
+
+*Above: Example of a paper generated with the Vector Quantization model*
+
 ## Features
 
 - Multi-agent system for collaborative paper writing
@@ -13,6 +17,35 @@ Paper Agent uses specialized AI agents to compose research papers by generating 
 - Template-based section generation
 - LaTeX output for professional papers
 - Checkpoint system to save progress
+
+## Installation
+
+### Using pip
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/paper-agent.git
+cd paper-agent
+
+# Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Using conda
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/paper-agent.git
+cd paper-agent
+
+# Create and activate conda environment
+conda env create -f environment.yml
+conda activate paper-agent
+```
 
 ## Usage
 
