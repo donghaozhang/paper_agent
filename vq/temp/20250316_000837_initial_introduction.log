@@ -1,0 +1,16 @@
+```latex
+\section{Introduction}
+
+Recent advancements in vector quantization and representation learning have significantly transformed the landscape of image modeling across various applications, such as image compression, generative tasks, and visual representation learning. In this report, we focus on enhancing the capabilities of Vector Quantized Variational Autoencoders (VQ-VAE), introducing the Rotated Vector Quantization framework, a notably enhanced version of conventional VQ-VAE models. The standard VQ-VAE serves as a foundation for advancing representation quality through efficient quantization and reconstruction mechanisms, leveraging learned embeddings to capture intricate data distributions.
+
+User studies indicate that the Rotated Vector Quantization consistently outperforms conventional VQ-VAE models by demonstrating lower reconstruction loss, improved codebook utilization, and enhanced representation quality. In this report, we outline the design decisions that contribute to this improvement, which include i) feature encoding via a refined ResNet architecture (Sec. \ref{sec:feature_encoding}), ii) an innovative discretization process through the integrated rotation mechanism (Sec. \ref{sec:discretization}), and iii) the implementation of a custom gradient propagation method to manage non-differentiable quantization challenges (Sec. \ref{sec:custom_gradient}).
+
+A primary concern in representation learning is that while existing models are often deemed state-of-the-art, the complexity of their architecture hinders the accurate assessment and validation of their performance. This lack of clarity challenges reproducibility and innovation in research, as well as complicates the evaluation of biases and limitations that are critical for responsible implementation. By offering the Rotated Vector Quantization framework, we present a method that effectively reduces reconstruction error while optimizing codebook usage. Our approach leverages rotation and rescaling transformations, ensuring enhanced alignment between latent representations and codebook quantizations.
+
+\begin{itemize}
+    \item We propose a novel encoder architecture based on ResNet that captures high-level features, improving the quality of latent representations.
+    \item The framework introduces a rotation mechanism during vector quantization, leading to enhanced alignment of quantized embeddings and reduced reconstruction loss.
+    \item A custom gradient propagation strategy is developed to enable effective backpropagation through non-differentiable layers, mitigating common issues such as codebook collapse.
+    \item Empirical results demonstrate superior performance of our model over baseline techniques, evidenced by low reconstruction loss and high codebook utilization metrics across various datasets.
+\end{itemize}
+```

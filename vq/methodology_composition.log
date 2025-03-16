@@ -1,0 +1,534 @@
+2025-03-15 22:06:34,818 - INFO - Structure iteration 1/1
+2025-03-15 22:06:49,410 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:06:49,439 - ERROR - Error during methodology composition: [Errno 2] No such file or directory: 'D:\\AI_play\\AI_Code\\AI-Researcher-main\\AI-Researcher-main\\vq\\rotated_vq\\cache_1\\agents\\prepare_agent.json'
+2025-03-15 22:19:34,123 - INFO - Structure iteration 1/1
+2025-03-15 22:19:46,798 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:19:55,569 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:20:09,911 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:20:25,124 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:20:39,581 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:20:54,958 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:21:09,027 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:21:32,894 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:21:46,519 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:21:46,525 - INFO - Written intermediate result to vq/temp/20250315_221934_iteration_1_final.log
+2025-03-15 22:21:46,528 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\structure.json
+2025-03-15 22:21:54,657 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:21:54,665 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_0_code.log
+2025-03-15 22:22:06,283 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:22:06,292 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_0_agent_0.log
+2025-03-15 22:22:06,296 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:22:19,233 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:22:19,240 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_0_agent_1.log
+2025-03-15 22:22:19,245 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:22:31,170 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:22:31,179 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_0_agent_2.log
+2025-03-15 22:22:31,183 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:22:45,501 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:22:45,511 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_0_agent_3.log
+2025-03-15 22:22:45,517 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:22:57,568 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:22:57,587 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_0_agent_4.log
+2025-03-15 22:22:57,592 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:23:09,241 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:23:09,254 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_0_agent_5.log
+2025-03-15 22:23:09,258 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:23:22,150 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:23:22,158 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_0_agent_6.log
+2025-03-15 22:23:22,164 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:23:37,877 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:23:37,895 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_0_agent_7.log
+2025-03-15 22:23:37,901 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:23:51,678 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:23:51,684 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_1_code.log
+2025-03-15 22:24:07,313 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:24:07,320 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_1_agent_0.log
+2025-03-15 22:24:07,326 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:24:21,441 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:24:21,447 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_1_agent_1.log
+2025-03-15 22:24:21,452 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:24:32,548 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:24:32,559 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_1_agent_2.log
+2025-03-15 22:24:32,564 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:24:45,373 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:24:45,381 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_1_agent_3.log
+2025-03-15 22:24:45,387 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:24:59,636 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:24:59,643 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_1_agent_4.log
+2025-03-15 22:24:59,648 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:25:13,794 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:25:13,800 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_1_agent_5.log
+2025-03-15 22:25:13,805 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:25:31,035 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:25:31,043 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_1_agent_6.log
+2025-03-15 22:25:31,049 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:25:54,502 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:25:54,510 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_1_agent_7.log
+2025-03-15 22:25:54,516 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:26:02,800 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:26:02,806 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_2_code.log
+2025-03-15 22:26:14,109 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:26:14,118 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_2_agent_0.log
+2025-03-15 22:26:14,124 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:26:26,065 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:26:26,071 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_2_agent_1.log
+2025-03-15 22:26:26,078 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:26:35,626 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:26:35,634 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_2_agent_2.log
+2025-03-15 22:26:35,641 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:26:46,987 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:26:46,993 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_2_agent_3.log
+2025-03-15 22:26:47,000 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:26:59,154 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:26:59,170 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_2_agent_4.log
+2025-03-15 22:26:59,175 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:27:12,126 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:27:12,132 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_2_agent_5.log
+2025-03-15 22:27:12,139 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:27:26,486 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:27:26,492 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_2_agent_6.log
+2025-03-15 22:27:26,500 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:27:40,512 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:27:40,520 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_2_agent_7.log
+2025-03-15 22:27:40,526 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:27:48,224 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:27:48,231 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_3_code.log
+2025-03-15 22:27:57,007 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:27:57,014 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_3_agent_0.log
+2025-03-15 22:27:57,021 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:28:06,042 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:28:06,050 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_3_agent_1.log
+2025-03-15 22:28:06,057 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:28:15,397 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:28:15,407 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_3_agent_2.log
+2025-03-15 22:28:15,414 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:28:25,478 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:28:25,485 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_3_agent_3.log
+2025-03-15 22:28:25,492 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:28:40,336 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:28:40,343 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_3_agent_4.log
+2025-03-15 22:28:40,351 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:28:55,754 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:28:55,763 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_3_agent_5.log
+2025-03-15 22:28:55,770 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:29:30,859 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:29:30,881 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_3_agent_6.log
+2025-03-15 22:29:30,888 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:29:50,699 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:29:50,718 - INFO - Written intermediate result to vq/temp/20250315_221934_subsection_3_agent_7.log
+2025-03-15 22:29:50,725 - INFO - Saved checkpoint: vq/methodology_checkpoints/rotated_vq\subsections.json
+2025-03-15 22:29:50,731 - INFO - Written intermediate result to vq/temp/20250315_221934_pre_fusion_subsections.log
+2025-03-15 22:30:44,050 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:30:44,230 - INFO - Written intermediate result to vq/temp/20250315_221934_post_fusion_methodology.log
+2025-03-15 22:31:09,872 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 22:31:09,879 - INFO - Written intermediate result to vq/temp/20250315_221934_post_checklist_methodology.log
+2025-03-15 22:31:09,894 - INFO - Saved final methodology to vq/target_sections/rotated_vq\methodology.tex
+2025-03-15 22:31:09,895 - INFO - Methodology composition completed
+2025-03-15 23:51:09,649 - INFO - Loaded structure from checkpoint
+2025-03-15 23:51:09,652 - INFO - Loaded subsection contents from checkpoint
+2025-03-15 23:51:09,655 - INFO - Written intermediate result to vq/temp/20250315_235109_pre_fusion_subsections.log
+2025-03-15 23:52:04,253 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:52:04,437 - INFO - Written intermediate result to vq/temp/20250315_235109_post_fusion_methodology.log
+2025-03-15 23:53:03,128 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:53:03,297 - INFO - Written intermediate result to vq/temp/20250315_235109_post_checklist_methodology.log
+2025-03-15 23:53:03,301 - INFO - Saved final methodology to vq/target_sections/rotated_vq\methodology.tex
+2025-03-15 23:53:03,301 - INFO - Methodology composition completed
+2025-03-15 23:55:46,117 - INFO - Loaded structure from checkpoint
+2025-03-15 23:55:46,118 - INFO - Loaded subsection contents from checkpoint
+2025-03-15 23:55:46,121 - INFO - Written intermediate result to vq/temp/20250315_235546_pre_fusion_subsections.log
+2025-03-15 23:56:54,378 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:56:54,555 - INFO - Written intermediate result to vq/temp/20250315_235546_post_fusion_methodology.log
+2025-03-15 23:57:29,969 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:57:30,141 - INFO - Written intermediate result to vq/temp/20250315_235546_post_checklist_methodology.log
+2025-03-15 23:57:30,146 - INFO - Saved final methodology to vq/target_sections/rotated_vq\methodology.tex
+2025-03-15 23:57:30,146 - INFO - Methodology composition completed
+2025-03-15 23:57:30,512 - INFO - Found 0 related papers in D:\AI_play\AI_Code\AI-Researcher-main\AI-Researcher-main\vq\rotated_vq\workplace\papers
+2025-03-15 23:57:30,512 - INFO - Structure iteration 1/3
+2025-03-15 23:57:35,161 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:57:43,176 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:57:43,186 - INFO - Written intermediate result to vq/temp/20250315_235730_iteration_1_final.log
+2025-03-15 23:57:43,187 - INFO - Structure iteration 2/3
+2025-03-15 23:57:49,178 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:57:54,368 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:57:54,374 - INFO - Written intermediate result to vq/temp/20250315_235730_iteration_2_final.log
+2025-03-15 23:57:54,374 - INFO - Structure iteration 3/3
+2025-03-15 23:58:00,965 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:58:09,895 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:58:09,902 - INFO - Written intermediate result to vq/temp/20250315_235730_iteration_3_final.log
+2025-03-15 23:58:09,905 - INFO - Saved checkpoint: vq/related_work_checkpoints/rotated_vq\structure.json
+2025-03-15 23:58:16,057 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:58:16,074 - INFO - Written intermediate result to vq/temp/20250315_235730_subsection_0_agent_0.log
+2025-03-15 23:58:23,942 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:58:23,951 - INFO - Written intermediate result to vq/temp/20250315_235730_subsection_0_agent_1.log
+2025-03-15 23:58:31,779 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:58:31,790 - INFO - Written intermediate result to vq/temp/20250315_235730_subsection_1_agent_0.log
+2025-03-15 23:58:39,498 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:58:39,505 - INFO - Written intermediate result to vq/temp/20250315_235730_subsection_1_agent_1.log
+2025-03-15 23:58:45,594 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:58:45,601 - INFO - Written intermediate result to vq/temp/20250315_235730_subsection_2_agent_0.log
+2025-03-15 23:58:51,848 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:58:51,856 - INFO - Written intermediate result to vq/temp/20250315_235730_subsection_2_agent_1.log
+2025-03-15 23:58:51,861 - INFO - Written intermediate result to vq/temp/20250315_235730_pre_fusion_subsections.log
+2025-03-15 23:58:58,130 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:58:58,141 - INFO - Written intermediate result to vq/temp/20250315_235730_post_fusion_related_work.log
+2025-03-15 23:59:15,122 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:59:15,129 - INFO - Written intermediate result to vq/temp/20250315_235730_post_checklist_related_work.log
+2025-03-15 23:59:15,133 - INFO - Saved final related work to vq/target_sections/rotated_vq\related_work.tex
+2025-03-15 23:59:15,134 - INFO - Related work composition completed
+2025-03-15 23:59:15,504 - INFO - Written intermediate result to vq/temp/20250315_235915_project_summary.log
+2025-03-15 23:59:15,505 - INFO - Structure iteration 1/2
+2025-03-15 23:59:26,652 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:59:41,277 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-15 23:59:41,287 - ERROR - Error during experiments composition: [Errno 2] No such file or directory: 'D:\\AI_play\\AI_Code\\AI-Researcher-main\\AI-Researcher-main\\vq\\rotated_vq\\cache_1\\agents\\experiment_analysis_agent_iter_refine_2.json'
+2025-03-16 00:00:51,470 - INFO - Loaded structure from checkpoint
+2025-03-16 00:00:51,472 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 00:00:51,475 - INFO - Written intermediate result to vq/temp/20250316_000051_pre_fusion_subsections.log
+2025-03-16 00:01:46,947 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:01:47,170 - INFO - Written intermediate result to vq/temp/20250316_000051_post_fusion_methodology.log
+2025-03-16 00:02:17,021 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:02:17,202 - INFO - Written intermediate result to vq/temp/20250316_000051_post_checklist_methodology.log
+2025-03-16 00:02:17,206 - INFO - Saved final methodology to vq/target_sections/rotated_vq\methodology.tex
+2025-03-16 00:02:17,207 - INFO - Methodology composition completed
+2025-03-16 00:02:17,580 - INFO - Found 0 related papers in D:\AI_play\AI_Code\AI-Researcher-main\AI-Researcher-main\vq\rotated_vq\workplace\papers
+2025-03-16 00:02:17,581 - INFO - Loaded structure from checkpoint
+2025-03-16 00:02:29,459 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:02:29,466 - INFO - Written intermediate result to vq/temp/20250316_000217_subsection_0_agent_0.log
+2025-03-16 00:02:43,479 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:02:43,486 - INFO - Written intermediate result to vq/temp/20250316_000217_subsection_0_agent_1.log
+2025-03-16 00:02:49,870 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:02:49,877 - INFO - Written intermediate result to vq/temp/20250316_000217_subsection_1_agent_0.log
+2025-03-16 00:02:59,627 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:02:59,633 - INFO - Written intermediate result to vq/temp/20250316_000217_subsection_1_agent_1.log
+2025-03-16 00:03:08,508 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:03:08,517 - INFO - Written intermediate result to vq/temp/20250316_000217_subsection_2_agent_0.log
+2025-03-16 00:03:20,932 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:03:20,955 - INFO - Written intermediate result to vq/temp/20250316_000217_subsection_2_agent_1.log
+2025-03-16 00:03:20,961 - INFO - Written intermediate result to vq/temp/20250316_000217_pre_fusion_subsections.log
+2025-03-16 00:03:27,112 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:03:27,118 - INFO - Written intermediate result to vq/temp/20250316_000217_post_fusion_related_work.log
+2025-03-16 00:03:35,835 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:03:35,845 - INFO - Written intermediate result to vq/temp/20250316_000217_post_checklist_related_work.log
+2025-03-16 00:03:35,849 - INFO - Saved final related work to vq/target_sections/rotated_vq\related_work.tex
+2025-03-16 00:03:35,849 - INFO - Related work composition completed
+2025-03-16 00:03:36,204 - INFO - Written intermediate result to vq/temp/20250316_000336_project_summary.log
+2025-03-16 00:03:36,204 - INFO - Structure iteration 1/2
+2025-03-16 00:03:53,183 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:04:16,407 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:04:16,418 - WARNING - Agent file experiment_analysis_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:04:16,419 - WARNING - Agent file machine_learning_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:04:31,917 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:04:31,927 - INFO - Written intermediate result to vq/temp/20250316_000336_iteration_1_final.log
+2025-03-16 00:04:31,927 - INFO - Structure iteration 2/2
+2025-03-16 00:04:47,494 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:05:03,859 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:05:03,868 - WARNING - Agent file experiment_analysis_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:05:03,868 - WARNING - Agent file machine_learning_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:05:18,476 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:05:18,489 - INFO - Written intermediate result to vq/temp/20250316_000336_iteration_2_final.log
+2025-03-16 00:05:18,493 - INFO - Saved checkpoint: vq/experiments_checkpoints/rotated_vq\structure.json
+2025-03-16 00:05:23,940 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:05:23,948 - INFO - Written intermediate result to vq/temp/20250316_000336_subsection_0_agent_0.log
+2025-03-16 00:05:33,816 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:05:33,824 - INFO - Written intermediate result to vq/temp/20250316_000336_subsection_0_agent_1.log
+2025-03-16 00:05:33,825 - WARNING - Agent file experiment_analysis_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:05:33,825 - WARNING - Agent file machine_learning_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:05:41,309 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:05:49,055 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:05:49,062 - INFO - Written intermediate result to vq/temp/20250316_000336_subsection_1_agent_0.log
+2025-03-16 00:06:11,333 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:06:11,346 - INFO - Written intermediate result to vq/temp/20250316_000336_subsection_1_agent_1.log
+2025-03-16 00:06:11,347 - WARNING - Agent file experiment_analysis_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:06:11,347 - WARNING - Agent file machine_learning_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:06:20,011 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:06:28,253 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:06:28,266 - INFO - Written intermediate result to vq/temp/20250316_000336_subsection_2_agent_0.log
+2025-03-16 00:06:35,233 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:06:35,238 - INFO - Written intermediate result to vq/temp/20250316_000336_subsection_2_agent_1.log
+2025-03-16 00:06:35,239 - WARNING - Agent file experiment_analysis_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:06:35,239 - WARNING - Agent file machine_learning_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:06:42,192 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:06:48,072 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:06:48,083 - INFO - Written intermediate result to vq/temp/20250316_000336_subsection_3_agent_0.log
+2025-03-16 00:06:58,865 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:06:58,880 - INFO - Written intermediate result to vq/temp/20250316_000336_subsection_3_agent_1.log
+2025-03-16 00:06:58,881 - WARNING - Agent file experiment_analysis_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:06:58,881 - WARNING - Agent file machine_learning_agent_iter_refine_2.json not found. Skipping.
+2025-03-16 00:07:15,219 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:07:15,240 - INFO - Saved checkpoint: vq/experiments_checkpoints/rotated_vq\subsections.json
+2025-03-16 00:07:15,243 - INFO - Written intermediate result to vq/temp/20250316_000336_pre_fusion_subsections.log
+2025-03-16 00:08:01,096 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:08:01,266 - INFO - Written intermediate result to vq/temp/20250316_000336_post_fusion_experiments.log
+2025-03-16 00:08:36,840 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:08:37,010 - INFO - Written intermediate result to vq/temp/20250316_000336_post_checklist_experiments.log
+2025-03-16 00:08:37,014 - INFO - Saved final experiments to vq/target_sections/rotated_vq\experiments.tex
+2025-03-16 00:08:37,015 - INFO - Experiments composition completed
+2025-03-16 00:08:37,444 - ERROR - Error reading benchmark file: 'task1'
+2025-03-16 00:08:37,445 - INFO - Structure iteration 1/1
+2025-03-16 00:08:42,670 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:08:42,677 - INFO - Written intermediate result to vq/temp/20250316_000837_iteration_1_final.log
+2025-03-16 00:08:42,681 - INFO - Saved checkpoint: vq/introduction_checkpoints/rotated_vq\structure.json
+2025-03-16 00:08:49,649 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:08:49,655 - INFO - Written intermediate result to vq/temp/20250316_000837_initial_introduction.log
+2025-03-16 00:09:01,269 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:09:01,279 - INFO - Written intermediate result to vq/temp/20250316_000837_final_introduction.log
+2025-03-16 00:09:01,282 - INFO - Saved final introduction to vq/target_sections/rotated_vq\introduction.tex
+2025-03-16 00:09:01,283 - INFO - Introduction composition completed
+2025-03-16 00:09:01,728 - INFO - Structure iteration 1/2
+2025-03-16 00:09:06,132 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:09:06,137 - INFO - Written intermediate result to vq/temp/20250316_000901_iteration_1_final.log
+2025-03-16 00:09:06,138 - INFO - Structure iteration 2/2
+2025-03-16 00:09:12,539 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:09:12,545 - INFO - Written intermediate result to vq/temp/20250316_000901_iteration_2_final.log
+2025-03-16 00:09:12,548 - INFO - Saved checkpoint: vq/conclusion_checkpoints/rotated_vq\structure.json
+2025-03-16 00:09:16,292 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:09:16,298 - INFO - Written intermediate result to vq/temp/20250316_000901_final_conclusion.log
+2025-03-16 00:09:16,302 - INFO - Saved final conclusion to vq/target_sections/rotated_vq\conclusion.tex
+2025-03-16 00:09:16,302 - INFO - Conclusion composition completed
+2025-03-16 00:09:16,668 - INFO - Structure iteration 1/2
+2025-03-16 00:09:21,755 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:09:21,762 - INFO - Written intermediate result to vq/temp/20250316_000916_iteration_1_final.log
+2025-03-16 00:09:21,762 - INFO - Structure iteration 2/2
+2025-03-16 00:09:25,589 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:09:25,598 - INFO - Written intermediate result to vq/temp/20250316_000916_iteration_2_final.log
+2025-03-16 00:09:25,602 - INFO - Saved checkpoint: vq/abstract_checkpoints/rotated_vq\structure.json
+2025-03-16 00:09:28,695 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:09:28,703 - INFO - Written intermediate result to vq/temp/20250316_000916_initial_abstract.log
+2025-03-16 00:09:28,707 - INFO - Saved final abstract to vq/target_sections/rotated_vq\abstract.tex
+2025-03-16 00:09:28,708 - INFO - Abstract composition completed
+2025-03-16 00:11:18,405 - INFO - Loaded structure from checkpoint
+2025-03-16 00:11:18,408 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 00:11:18,412 - INFO - Written intermediate result to vq/temp/20250316_001118_pre_fusion_subsections.log
+2025-03-16 00:12:19,790 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:12:19,965 - INFO - Written intermediate result to vq/temp/20250316_001118_post_fusion_methodology.log
+2025-03-16 00:12:51,957 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:12:52,137 - INFO - Written intermediate result to vq/temp/20250316_001118_post_checklist_methodology.log
+2025-03-16 00:12:52,142 - INFO - Saved final methodology to vq/target_sections/rotated_vq\methodology.tex
+2025-03-16 00:12:52,142 - INFO - Methodology composition completed
+2025-03-16 00:12:52,494 - INFO - Found 0 related papers in D:\AI_play\AI_Code\AI-Researcher-main\AI-Researcher-main\vq\rotated_vq\workplace\papers
+2025-03-16 00:12:52,495 - INFO - Loaded structure from checkpoint
+2025-03-16 00:12:59,903 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:12:59,910 - INFO - Written intermediate result to vq/temp/20250316_001252_subsection_0_agent_0.log
+2025-03-16 00:13:07,017 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:13:07,023 - INFO - Written intermediate result to vq/temp/20250316_001252_subsection_0_agent_1.log
+2025-03-16 00:13:16,011 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:13:16,017 - INFO - Written intermediate result to vq/temp/20250316_001252_subsection_1_agent_0.log
+2025-03-16 00:13:26,123 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:13:26,130 - INFO - Written intermediate result to vq/temp/20250316_001252_subsection_1_agent_1.log
+2025-03-16 00:13:37,142 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:13:37,151 - INFO - Written intermediate result to vq/temp/20250316_001252_subsection_2_agent_0.log
+2025-03-16 00:13:45,765 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:13:45,770 - INFO - Written intermediate result to vq/temp/20250316_001252_subsection_2_agent_1.log
+2025-03-16 00:13:45,776 - INFO - Written intermediate result to vq/temp/20250316_001252_pre_fusion_subsections.log
+2025-03-16 00:13:52,670 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:13:52,701 - INFO - Written intermediate result to vq/temp/20250316_001252_post_fusion_related_work.log
+2025-03-16 00:14:10,311 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:14:10,321 - INFO - Written intermediate result to vq/temp/20250316_001252_post_checklist_related_work.log
+2025-03-16 00:14:10,324 - INFO - Saved final related work to vq/target_sections/rotated_vq\related_work.tex
+2025-03-16 00:14:10,325 - INFO - Related work composition completed
+2025-03-16 00:14:10,684 - INFO - Written intermediate result to vq/temp/20250316_001410_project_summary.log
+2025-03-16 00:14:10,685 - INFO - Loaded structure from checkpoint
+2025-03-16 00:14:10,686 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 00:14:10,690 - INFO - Written intermediate result to vq/temp/20250316_001410_pre_fusion_subsections.log
+2025-03-16 00:14:52,414 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:14:52,598 - INFO - Written intermediate result to vq/temp/20250316_001410_post_fusion_experiments.log
+2025-03-16 00:15:31,412 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:15:31,577 - INFO - Written intermediate result to vq/temp/20250316_001410_post_checklist_experiments.log
+2025-03-16 00:15:31,581 - INFO - Saved final experiments to vq/target_sections/rotated_vq\experiments.tex
+2025-03-16 00:15:31,581 - INFO - Experiments composition completed
+2025-03-16 00:15:31,943 - ERROR - Error reading benchmark file: 'task1'
+2025-03-16 00:15:31,944 - INFO - Loaded structure from checkpoint
+2025-03-16 00:15:44,616 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:15:44,623 - INFO - Written intermediate result to vq/temp/20250316_001531_initial_introduction.log
+2025-03-16 00:15:57,247 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:15:57,268 - INFO - Written intermediate result to vq/temp/20250316_001531_final_introduction.log
+2025-03-16 00:15:57,272 - INFO - Saved final introduction to vq/target_sections/rotated_vq\introduction.tex
+2025-03-16 00:15:57,273 - INFO - Introduction composition completed
+2025-03-16 00:15:57,631 - INFO - Loaded structure from checkpoint
+2025-03-16 00:16:01,115 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:16:01,121 - INFO - Written intermediate result to vq/temp/20250316_001557_final_conclusion.log
+2025-03-16 00:16:01,125 - INFO - Saved final conclusion to vq/target_sections/rotated_vq\conclusion.tex
+2025-03-16 00:16:01,126 - INFO - Conclusion composition completed
+2025-03-16 00:16:01,507 - INFO - Loaded structure from checkpoint
+2025-03-16 00:16:06,269 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:16:06,275 - INFO - Written intermediate result to vq/temp/20250316_001601_initial_abstract.log
+2025-03-16 00:16:06,279 - INFO - Saved final abstract to vq/target_sections/rotated_vq\abstract.tex
+2025-03-16 00:16:06,280 - INFO - Abstract composition completed
+2025-03-16 00:38:06,063 - INFO - Loaded structure from checkpoint
+2025-03-16 00:38:06,065 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 00:38:06,068 - INFO - Written intermediate result to vq/temp/20250316_003806_pre_fusion_subsections.log
+2025-03-16 00:39:10,032 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:39:10,269 - INFO - Written intermediate result to vq/temp/20250316_003806_post_fusion_methodology.log
+2025-03-16 00:39:42,070 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:39:42,238 - INFO - Written intermediate result to vq/temp/20250316_003806_post_checklist_methodology.log
+2025-03-16 00:39:42,241 - INFO - Saved final methodology to vq/target_sections/rotated_vq\methodology.tex
+2025-03-16 00:39:42,242 - INFO - Methodology composition completed
+2025-03-16 00:39:42,563 - INFO - Found 0 related papers in D:\AI_play\AI_Code\AI-Researcher-main\AI-Researcher-main\vq\rotated_vq\workplace\papers
+2025-03-16 00:39:42,564 - INFO - Loaded structure from checkpoint
+2025-03-16 00:39:52,281 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:39:52,293 - INFO - Written intermediate result to vq/temp/20250316_003942_subsection_0_agent_0.log
+2025-03-16 00:39:58,652 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:39:58,659 - INFO - Written intermediate result to vq/temp/20250316_003942_subsection_0_agent_1.log
+2025-03-16 00:40:05,315 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:40:05,322 - INFO - Written intermediate result to vq/temp/20250316_003942_subsection_1_agent_0.log
+2025-03-16 00:40:13,829 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:40:13,836 - INFO - Written intermediate result to vq/temp/20250316_003942_subsection_1_agent_1.log
+2025-03-16 00:40:20,041 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:40:20,050 - INFO - Written intermediate result to vq/temp/20250316_003942_subsection_2_agent_0.log
+2025-03-16 00:40:27,563 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:40:27,574 - INFO - Written intermediate result to vq/temp/20250316_003942_subsection_2_agent_1.log
+2025-03-16 00:40:27,579 - INFO - Written intermediate result to vq/temp/20250316_003942_pre_fusion_subsections.log
+2025-03-16 00:40:33,432 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:40:33,459 - INFO - Written intermediate result to vq/temp/20250316_003942_post_fusion_related_work.log
+2025-03-16 00:40:50,463 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:40:50,477 - INFO - Written intermediate result to vq/temp/20250316_003942_post_checklist_related_work.log
+2025-03-16 00:40:50,481 - INFO - Saved final related work to vq/target_sections/rotated_vq\related_work.tex
+2025-03-16 00:40:50,481 - INFO - Related work composition completed
+2025-03-16 00:40:50,800 - INFO - Written intermediate result to vq/temp/20250316_004050_project_summary.log
+2025-03-16 00:40:50,800 - INFO - Loaded structure from checkpoint
+2025-03-16 00:40:50,801 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 00:40:50,804 - INFO - Written intermediate result to vq/temp/20250316_004050_pre_fusion_subsections.log
+2025-03-16 00:41:27,980 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:41:28,146 - INFO - Written intermediate result to vq/temp/20250316_004050_post_fusion_experiments.log
+2025-03-16 00:42:06,973 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:42:07,140 - INFO - Written intermediate result to vq/temp/20250316_004050_post_checklist_experiments.log
+2025-03-16 00:42:07,144 - INFO - Saved final experiments to vq/target_sections/rotated_vq\experiments.tex
+2025-03-16 00:42:07,144 - INFO - Experiments composition completed
+2025-03-16 00:42:07,469 - ERROR - Error reading benchmark file: 'task1'
+2025-03-16 00:42:07,469 - INFO - Loaded structure from checkpoint
+2025-03-16 00:42:22,877 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:42:22,887 - INFO - Written intermediate result to vq/temp/20250316_004207_initial_introduction.log
+2025-03-16 00:42:30,525 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:42:30,534 - INFO - Written intermediate result to vq/temp/20250316_004207_final_introduction.log
+2025-03-16 00:42:30,539 - INFO - Saved final introduction to vq/target_sections/rotated_vq\introduction.tex
+2025-03-16 00:42:30,539 - INFO - Introduction composition completed
+2025-03-16 00:42:30,857 - INFO - Loaded structure from checkpoint
+2025-03-16 00:42:34,868 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:42:34,878 - INFO - Written intermediate result to vq/temp/20250316_004230_final_conclusion.log
+2025-03-16 00:42:34,882 - INFO - Saved final conclusion to vq/target_sections/rotated_vq\conclusion.tex
+2025-03-16 00:42:34,882 - INFO - Conclusion composition completed
+2025-03-16 00:42:35,198 - INFO - Loaded structure from checkpoint
+2025-03-16 00:42:38,954 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 00:42:38,960 - INFO - Written intermediate result to vq/temp/20250316_004235_initial_abstract.log
+2025-03-16 00:42:38,964 - INFO - Saved final abstract to vq/target_sections/rotated_vq\abstract.tex
+2025-03-16 00:42:38,964 - INFO - Abstract composition completed
+2025-03-16 10:20:06,047 - INFO - Loaded structure from checkpoint
+2025-03-16 10:20:06,049 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 10:20:06,049 - INFO - Written intermediate result to vq/temp/20250316_102006_pre_fusion_subsections.log
+2025-03-16 10:20:55,386 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:20:55,575 - INFO - Written intermediate result to vq/temp/20250316_102006_post_fusion_methodology.log
+2025-03-16 10:21:35,189 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:21:35,360 - INFO - Written intermediate result to vq/temp/20250316_102006_post_checklist_methodology.log
+2025-03-16 10:21:35,364 - INFO - Saved final methodology to vq/target_sections/rotated_vq\methodology.tex
+2025-03-16 10:21:35,365 - INFO - Methodology composition completed
+2025-03-16 10:21:35,706 - INFO - Found 0 related papers in D:\AI_play\AI_Code\AI-Researcher-main\AI-Researcher-main\vq\rotated_vq\workplace\papers
+2025-03-16 10:21:35,706 - INFO - Loaded structure from checkpoint
+2025-03-16 10:21:41,985 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:21:41,994 - INFO - Written intermediate result to vq/temp/20250316_102135_subsection_0_agent_0.log
+2025-03-16 10:21:51,028 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:21:51,038 - INFO - Written intermediate result to vq/temp/20250316_102135_subsection_0_agent_1.log
+2025-03-16 10:21:56,623 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:21:56,631 - INFO - Written intermediate result to vq/temp/20250316_102135_subsection_1_agent_0.log
+2025-03-16 10:22:01,938 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:22:01,946 - INFO - Written intermediate result to vq/temp/20250316_102135_subsection_1_agent_1.log
+2025-03-16 10:22:09,701 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:22:09,714 - INFO - Written intermediate result to vq/temp/20250316_102135_subsection_2_agent_0.log
+2025-03-16 10:22:16,831 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:22:16,839 - INFO - Written intermediate result to vq/temp/20250316_102135_subsection_2_agent_1.log
+2025-03-16 10:22:16,846 - INFO - Written intermediate result to vq/temp/20250316_102135_pre_fusion_subsections.log
+2025-03-16 10:22:23,400 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:22:23,406 - INFO - Written intermediate result to vq/temp/20250316_102135_post_fusion_related_work.log
+2025-03-16 10:22:37,984 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:22:37,995 - INFO - Written intermediate result to vq/temp/20250316_102135_post_checklist_related_work.log
+2025-03-16 10:22:38,004 - INFO - Saved final related work to vq/target_sections/rotated_vq\related_work.tex
+2025-03-16 10:22:38,005 - INFO - Related work composition completed
+2025-03-16 10:22:38,366 - INFO - Written intermediate result to vq/temp/20250316_102238_project_summary.log
+2025-03-16 10:22:38,366 - INFO - Loaded structure from checkpoint
+2025-03-16 10:22:38,366 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 10:22:38,366 - INFO - Written intermediate result to vq/temp/20250316_102238_pre_fusion_subsections.log
+2025-03-16 10:23:09,267 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:23:09,436 - INFO - Written intermediate result to vq/temp/20250316_102238_post_fusion_experiments.log
+2025-03-16 10:23:56,592 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:23:56,762 - INFO - Written intermediate result to vq/temp/20250316_102238_post_checklist_experiments.log
+2025-03-16 10:23:56,768 - INFO - Saved final experiments to vq/target_sections/rotated_vq\experiments.tex
+2025-03-16 10:23:56,769 - INFO - Experiments composition completed
+2025-03-16 10:23:57,176 - ERROR - Error reading benchmark file: 'task1'
+2025-03-16 10:23:57,176 - INFO - Loaded structure from checkpoint
+2025-03-16 10:24:08,865 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:24:08,874 - INFO - Written intermediate result to vq/temp/20250316_102357_initial_introduction.log
+2025-03-16 10:24:16,739 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:24:16,748 - INFO - Written intermediate result to vq/temp/20250316_102357_final_introduction.log
+2025-03-16 10:24:16,752 - INFO - Saved final introduction to vq/target_sections/rotated_vq\introduction.tex
+2025-03-16 10:24:16,752 - INFO - Introduction composition completed
+2025-03-16 10:24:17,190 - INFO - Loaded structure from checkpoint
+2025-03-16 10:24:19,791 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:24:19,798 - INFO - Written intermediate result to vq/temp/20250316_102417_final_conclusion.log
+2025-03-16 10:24:19,803 - INFO - Saved final conclusion to vq/target_sections/rotated_vq\conclusion.tex
+2025-03-16 10:24:19,804 - INFO - Conclusion composition completed
+2025-03-16 10:24:20,354 - INFO - Loaded structure from checkpoint
+2025-03-16 10:24:25,242 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 10:24:25,258 - INFO - Written intermediate result to vq/temp/20250316_102420_initial_abstract.log
+2025-03-16 10:24:25,261 - INFO - Saved final abstract to vq/target_sections/rotated_vq\abstract.tex
+2025-03-16 10:24:25,262 - INFO - Abstract composition completed
+2025-03-16 11:19:37,643 - INFO - Loaded structure from checkpoint
+2025-03-16 11:19:37,645 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 11:19:37,649 - INFO - Written intermediate result to vq/temp/20250316_111937_pre_fusion_subsections.log
+2025-03-16 11:19:38,287 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-03-16 11:19:38,293 - ERROR - Error during methodology composition: write() argument must be str, not None
+2025-03-16 11:40:06,615 - INFO - Loaded structure from checkpoint
+2025-03-16 11:40:06,618 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 11:40:06,621 - INFO - Written intermediate result to vq/temp/20250316_114006_pre_fusion_subsections.log
+2025-03-16 11:40:59,879 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:41:00,085 - INFO - Written intermediate result to vq/temp/20250316_114006_post_fusion_methodology.log
+2025-03-16 11:41:36,329 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:41:36,526 - INFO - Written intermediate result to vq/temp/20250316_114006_post_checklist_methodology.log
+2025-03-16 11:41:36,529 - INFO - Saved final methodology to vq/target_sections/rotated_vq\methodology.tex
+2025-03-16 11:41:36,530 - INFO - Methodology composition completed
+2025-03-16 11:41:36,865 - INFO - Found 0 related papers in D:\AI_play\AI_Code\AI-Researcher-main\AI-Researcher-main\vq\rotated_vq\workplace\papers
+2025-03-16 11:41:36,866 - INFO - Loaded structure from checkpoint
+2025-03-16 11:41:45,297 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:41:45,305 - INFO - Written intermediate result to vq/temp/20250316_114136_subsection_0_agent_0.log
+2025-03-16 11:41:56,585 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:41:56,604 - INFO - Written intermediate result to vq/temp/20250316_114136_subsection_0_agent_1.log
+2025-03-16 11:42:05,856 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:42:05,864 - INFO - Written intermediate result to vq/temp/20250316_114136_subsection_1_agent_0.log
+2025-03-16 11:42:13,787 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:42:13,796 - INFO - Written intermediate result to vq/temp/20250316_114136_subsection_1_agent_1.log
+2025-03-16 11:42:21,909 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:42:21,915 - INFO - Written intermediate result to vq/temp/20250316_114136_subsection_2_agent_0.log
+2025-03-16 11:42:28,757 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:42:28,762 - INFO - Written intermediate result to vq/temp/20250316_114136_subsection_2_agent_1.log
+2025-03-16 11:42:28,767 - INFO - Written intermediate result to vq/temp/20250316_114136_pre_fusion_subsections.log
+2025-03-16 11:42:35,403 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:42:35,412 - INFO - Written intermediate result to vq/temp/20250316_114136_post_fusion_related_work.log
+2025-03-16 11:42:51,122 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:42:51,132 - INFO - Written intermediate result to vq/temp/20250316_114136_post_checklist_related_work.log
+2025-03-16 11:42:51,136 - INFO - Saved final related work to vq/target_sections/rotated_vq\related_work.tex
+2025-03-16 11:42:51,137 - INFO - Related work composition completed
+2025-03-16 11:42:51,487 - INFO - Written intermediate result to vq/temp/20250316_114251_project_summary.log
+2025-03-16 11:42:51,488 - INFO - Loaded structure from checkpoint
+2025-03-16 11:42:51,489 - INFO - Loaded subsection contents from checkpoint
+2025-03-16 11:42:51,493 - INFO - Written intermediate result to vq/temp/20250316_114251_pre_fusion_subsections.log
+2025-03-16 11:43:30,069 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:43:30,272 - INFO - Written intermediate result to vq/temp/20250316_114251_post_fusion_experiments.log
+2025-03-16 11:44:00,842 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:44:01,048 - INFO - Written intermediate result to vq/temp/20250316_114251_post_checklist_experiments.log
+2025-03-16 11:44:01,052 - INFO - Saved final experiments to vq/target_sections/rotated_vq\experiments.tex
+2025-03-16 11:44:01,053 - INFO - Experiments composition completed
+2025-03-16 11:44:01,404 - ERROR - Error reading benchmark file: 'task1'
+2025-03-16 11:44:01,405 - INFO - Loaded structure from checkpoint
+2025-03-16 11:44:10,597 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:44:10,603 - INFO - Written intermediate result to vq/temp/20250316_114401_initial_introduction.log
+2025-03-16 11:44:15,795 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:44:15,802 - INFO - Written intermediate result to vq/temp/20250316_114401_final_introduction.log
+2025-03-16 11:44:15,806 - INFO - Saved final introduction to vq/target_sections/rotated_vq\introduction.tex
+2025-03-16 11:44:15,807 - INFO - Introduction composition completed
+2025-03-16 11:44:16,153 - INFO - Loaded structure from checkpoint
+2025-03-16 11:44:18,980 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:44:18,987 - INFO - Written intermediate result to vq/temp/20250316_114416_final_conclusion.log
+2025-03-16 11:44:18,990 - INFO - Saved final conclusion to vq/target_sections/rotated_vq\conclusion.tex
+2025-03-16 11:44:18,991 - INFO - Conclusion composition completed
+2025-03-16 11:44:19,319 - INFO - Loaded structure from checkpoint
+2025-03-16 11:44:26,177 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-16 11:44:26,187 - INFO - Written intermediate result to vq/temp/20250316_114419_initial_abstract.log
+2025-03-16 11:44:26,190 - INFO - Saved final abstract to vq/target_sections/rotated_vq\abstract.tex
+2025-03-16 11:44:26,191 - INFO - Abstract composition completed

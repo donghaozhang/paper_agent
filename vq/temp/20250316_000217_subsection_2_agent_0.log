@@ -1,0 +1,21 @@
+```latex
+\subsection{Advancements in Neural Representation Learning}
+
+Recent advancements in neural discrete representation learning have underscored the potential of vector quantization methods for addressing various tasks, particularly in the realm of generative modeling and image synthesis. Notable architectures, such as Vector Quantized Generative Adversarial Networks (VQGAN) \cite{vqgan}, have achieved remarkable results by leveraging discrete latent spaces, revealing the advantages of combining vector quantization with deep learning frameworks. However, existing techniques encounter challenges, particularly related to gradient propagation through non-differentiable quantization layers, which can hinder the optimization of representations.
+
+Key works in this area have explored various strategies to enhance neural representation learning, with approaches like Vector Quantized Variational Autoencoders (VQ-VAE) \cite{vqvae} demonstrating the usefulness of quantization for discrete latent representation. Nevertheless, the susceptibility of these models to issues such as codebook collapse and limited utilization of the available codebook has raised concerns. For instance, techniques aimed at improving gradient flow, such as the straight-through estimator \cite{straightthrough}, have been adopted, but they often do not fully resolve the inherent limitations of non-differentiable operations in vector quantization.
+
+Inspired by these challenges, we propose a novel method called Rotated Vector Quantization to enhance performance in Vector Quantized Variational Autoencoders. Our approach tackles the problem of inefficient gradient propagation through the non-differentiable vector quantization layer by incorporating three main components: rotation and rescaling transformations, a refined gradient propagation method, and innovative codebook management techniques.
+
+Specifically, the first component, rotation and rescaling transformations, is designed to harmonize the quantized representations with continuous data distributions, thus facilitating smoother gradient flow during training. In contrast, our gradient propagation method aims to accurately estimate the gradients despite the non-differentiable nature of the quantization process, allowing for more effective updates to the model parameters. Finally, our codebook management techniques ensure greater utilization of the codebook entries, preventing issues related to codebook collapse and improving the overall quality of learned representations.
+
+Formally, we define the transformation applied to the latent representation \( z \) as follows:
+\begin{equation}
+    z' = R \cdot z + S
+\end{equation}
+where \( R \) denotes the rotation matrix and \( S \) is the scaling factor applied to the quantized outputs.
+
+To clarify, \( R \) is derived based on the orientation of data in the latent space, allowing for dynamic adjustments that enhance the learning process, while \( S \) acts as a normalization term to preserve the integrity of the representations throughout training.
+
+Our framework introduces significant enhancements compared to existing vector quantization methods, establishing a more robust mechanism for gradient estimation, thereby streamlining the training process for models that depend heavily on quantized representations. Overall, the proposed Rotated Vector Quantization method advances the current state of neural representation learning, addressing key limitations of prior approaches while maintaining a focus on optimal codebook management and representation quality.
+```

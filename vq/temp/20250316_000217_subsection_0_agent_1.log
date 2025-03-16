@@ -1,0 +1,51 @@
+Certainly! Below is the revised subsection for Gradient Propagation Techniques, formatted in LaTeX according to your requirements:
+
+```latex
+\subsection{Gradient Propagation Techniques}
+
+The challenge of effectively propagating gradients through non-differentiable layers, such as vector quantization, has been a focal point in neural network training. The pioneering work, most notably the straight-through estimator introduced by Hinton et al. \cite{straightthrough}, allows gradients to pass through quantization operations during backpropagation. This technique has significantly facilitated the training of deep networks incorporating quantization, demonstrating the importance of gradient flow in achieving convergence.
+
+Building on these foundational ideas, subsequent advancements addressed the complexities of estimating gradients through stochastic neurons \cite{gradientneuron}. These methods refine the straight-through estimator, enabling improved learning dynamics for models that employ discrete representations. For instance, recent methodological improvements in vector-quantized image modeling, exemplified by VQGAN \cite{vqgan}, showcase the evolving practices in the field, emphasizing the necessity for robust gradient propagation techniques that maintain the integrity of the training process.
+
+Despite these advancements, significant limitations persist, particularly regarding the preservation of gradient flow through non-differentiable quantization layers. Common issues, such as codebook collapse and limited codebook utilization, hinder the efficiency of training quantized models \cite{codebookcollapse, codebookutilization}. In response to these challenges, our proposed method, Rotated Vector Quantization, introduces innovative mechanisms to enhance gradient propagation specifically within Vector Quantized Variational AutoEncoders (VQVAE).
+
+Our approach is structured around three core components:
+
+\begin{itemize}
+    \item Implementing rotation and rescaling transformations to optimize the mapping of input representations to the codebook spaces.
+    \item Developing a novel gradient propagation method that ensures more effective gradient flow through the quantization layers, enhancing learning dynamics compared to standard approaches.
+    \item Implementing robust codebook management techniques that mitigate issues such as codebook collapse, thereby promoting better utilization of codebook entries during training.
+\end{itemize}
+
+We mathematically articulate the gradient propagation process through our method as follows:
+
+\[
+\frac{\partial L}{\partial x} = \frac{\partial L}{\partial \hat{x}} \cdot \frac{\partial \hat{x}}{\partial z}
+\]
+
+Here, \(L\) refers to the loss function, \(\hat{x}\) is the reconstructed output from the quantized representation, and \(z\) denotes the input to the quantization layer, augmented by our rotation and rescaling adjustments. 
+
+The motivation for our approach stems from the need to overcome the limitations of existing gradient estimation methods, which often struggle with the discrete nature of quantization leading to suboptimal performance. By employing rotation and rescaling, we achieve a more continuous transformation that preserves the structural integrity of the data while optimizing gradient flow.
+
+Furthermore, our method extends the frameworks established by previous approaches, particularly in how improvements in gradient propagation can significantly enhance training efficiency for VQVAE architectures. Traditional methods often encounter stagnation due to ineffective gradient flow; conversely, our proposed approach promotes more robust updates to model parameters by utilizing a smoother approximation of the gradient landscape.
+
+To articulate the workflow of our proposed method, we describe the following process:
+
+\begin{enumerate}
+    \item The input data undergoes a rotation and rescaling transformation to better align with the codebook representations.
+    \item The modified quantization layer incorporates our gradient enhancement strategy during the standard VQ process.
+    \item Advanced codebook management techniques are employed to ensure optimal representation retrieval and reduce the probability of codebook collapse throughout the training phase.
+\end{enumerate}
+
+The mathematical expression summarizing these key components is:
+
+\[
+\hat{x} = Q_{R}(x) + \lambda \nabla L \cdot R(x)
+\]
+
+where \(Q_{R}(x)\) indicates the quantized representation post-rotation, \(\lambda\) is a scaling factor, and \(R(x)\) encodes the gradient information.
+
+In conclusion, the Rotated Vector Quantization method addresses critical challenges of gradient propagation in models leveraging vector quantization. By enhancing gradient flow through innovative transformations and systematic codebook management strategies, our approach offers substantial improvements in training efficiency while effectively mitigating risks such as codebook collapse.
+``` 
+
+This revised subsection meets your requirements, providing a comprehensive overview of the current state of gradient propagation techniques while clearly linking to the proposed methodology.

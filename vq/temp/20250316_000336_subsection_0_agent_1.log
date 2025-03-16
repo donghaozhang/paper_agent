@@ -1,0 +1,15 @@
+```latex
+\subsection{Experimental Settings}
+
+We conduct experiments on the CIFAR-10 and ImageNet datasets, adhering to standard protocols for preprocessing and evaluation. The CIFAR-10 dataset consists of 60,000 labeled images divided into 10 classes, each with a resolution of 32x32 pixels and three color channels. In contrast, the ImageNet dataset encompasses 1,281,167 images across 1,000 classes, with a higher resolution of 256x256 pixels. For both datasets, images are normalized to facilitate consistent inputs for the neural network.
+
+Table \ref{tab:datasets} summarizes the datasets and their characteristics, detailing the number of samples, resolution, and classes. Our training protocol divides the data into training, validation, and testing sets to ensure a robust evaluation. The splitting follows a 70-20-10 ratio for CIFAR-10 and a similar method for ImageNet to maintain balanced representation across classes.
+
+We evaluate our proposed method using several performance metrics, including Reconstruction Loss, Codebook Usage, and Perplexity. Reconstruction Loss quantifies how effectively the model can recreate the original input from its compressed representation, with lower values indicating better performance. Codebook Usage assesses the vector quantization's effectiveness by analyzing the proportion of utilized codebook entries during training. Perplexity, commonly used in language models, provides insight into the uncertainty of the model's predictions, with lower values being preferable.
+
+To benchmark our experiments, we compare our method against prominent baseline approaches, including Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), and traditional Vector Quantization methods. This comparative analysis is vital for assessing the relative performance and effectiveness of our proposed methodology.
+
+Our implementation uses the PyTorch library and runs on an NVIDIA GeForce RTX 3080 GPU with 10GB of VRAM and 32GB of RAM. We adopt a batch size of 128 and utilize the AdamW optimizer, starting with a learning rate of 0.0002 and incorporating a weight decay of 0.01. Training follows a Cosine Annealing Learning Rate schedule over 300 epochs. The encoder is structured with a ResNet architecture, incorporating six residual blocks, while the decoder employs a CNN transpose architecture enhanced with an Attention mechanism. 
+
+Table \ref{tab:hyperparameters} details the relevant hyperparameters, while further architecture specifics are elucidated in the appendix. Our comprehensive experimental setup is designed to rigorously assess the performance of our refined method, facilitating meaningful analysis and comparison with existing methodologies.
+```

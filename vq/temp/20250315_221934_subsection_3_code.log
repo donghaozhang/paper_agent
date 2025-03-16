@@ -1,0 +1,25 @@
+```latex
+\subsection{Gradient Propagation}
+
+The Gradient Propagation mechanism is essential for optimizing the learning process across the entire framework, particularly when navigating the challenges presented by non-differentiable operations inherent in the quantization layers. The quantization process introduces discontinuities that can hinder effective backpropagation; thus, our proposed method includes a custom gradient function designed to mitigate these issues.
+
+To ensure a smooth gradient flow through the quantization process, we adopt a straight-through estimator (STE) that allows gradients to pass through the quantization step as if the operation were differentiable. This technique approximates the gradients, facilitating optimization and ensuring that gradients effectively reach both the Encoder and the Decoder components of the model. Formally, we define the quantized output \( q \) as:
+
+\[
+q = z_e + (q_{\text{quantized}} - z_e) \cdot \text{detach}
+\]
+
+where \( z_e \) represents the continuous latent representation from the Encoder, and \( q_{\text{quantized}} \) is the output from the Vector Quantizer.
+
+The workflow for Gradient Propagation includes the following steps:
+
+\begin{enumerate}
+  \item **Custom Gradient Function**: We define a custom gradient that permits backpropagation through the quantization layers while leveraging the STE to allow gradients to flow during the optimization process.
+  \item **Backpropagation Mechanics**: By employing the STE, we establish a pathway for gradient information to originate from the Decoder, traverse through the Vector Quantizer, and converge back to the Encoder. This ensures that the network can effectively learn by retaining the relevant connections and dependencies between these components.
+  \item **Loss Evaluation**: The Vector Quantizer computes the commitment loss and the reconstruction loss concurrently, ensuring that both components are captured in the gradient flow during optimization.
+\end{enumerate}
+
+By structuring the Gradient Propagation with these elements, we enhance the overall learning efficacy of the model, effectively bridging the gradient flow through the complex interactions of quantization. This mechanism also promotes optimal adjustments to the model parameters during training, accommodating the introduction of rotation transformations in the Vector Quantizer, which further enhances representation quality.
+
+Utilizing straight-through estimators and custom gradients collectively empowers our framework to navigate the intricacies associated with non-differentiable operations, bolstering the framework's robustness and capacity for representation learning while maintaining theoretical consistency across the optimization landscape.
+```

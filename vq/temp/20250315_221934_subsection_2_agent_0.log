@@ -1,0 +1,22 @@
+```latex
+\subsection{Decoder}
+
+The Decoder plays a crucial role in transforming quantized vectors, produced by the Vector Quantizer, back into the original data space. This component serves a dual purpose: it reconstructs the input data from the quantized representations and allows for an evaluation of the fidelity of learned latent representations. By comparing the reconstructed output to the original input, we can infer the effectiveness of the entire model's architecture.
+
+\textbf{Input:} Quantized vectors of shape \([B, D]\), where \(B\) represents the batch size and \(D\) is the dimension of the embedding space.
+
+\textbf{Output:} Reconstructed data of shape \([B, C, H, W]\), where \(C\), \(H\), and \(W\) represent the number of channels, height, and width of the original input data, respectively.
+
+\textbf{Workflow:}
+\begin{enumerate}
+    \item The decoding process begins with the quantized vectors \(q\), which are reshaped to facilitate transposed convolution operations. The reshaping step includes permuting dimensions to ensure compatibility with the processing layers.
+    \item The Decoder is developed using a series of transposed convolutional layers that sequentially process the quantized input vectors. Each layer applies a transposed convolution followed by batch normalization and a non-linear activation function, specifically Leaky ReLU. This sequence of operations assists in progressively reconstructing the spatial dimensions of the original data while preserving the important semantic information captured during the encoding stage.
+    \item The final layer consists of a transposed convolution that adjusts the feature maps to match the shape of the original input, yielding the reconstructed output. A Tanh activation function is employed at this stage to guarantee that the reconstructed data values fall within the range of \([-1, 1]\), which is essential for applications such as image generation, where pixel values are often normalized.
+\end{enumerate}
+
+The Decoder's architecture mirrors that of the Encoder, comprising layers designed to reverse the downsampling operations executed during encoding. This symmetry enhances the reconstruction fidelity and guarantees that the output closely resembles the original input data.
+
+Importantly, our implementation allows for seamless integration with the vector quantization process, effectively handling quantized inputs without significant fidelity loss. The performance of the Decoder is paramount to the overall efficacy of the Rotated VQVAE framework, as it ultimately determines the quality of the generative outputs.
+
+Additionally, the outputs produced by the Decoder are assessed in conjunction with the quantization loss and perplexity metrics derived from the Vector Quantizer. This comprehensive evaluation approach provides insight into the model's performance, enabling targeted fine-tuning and optimization across the variational architecture. The incorporation of rotation and rescaling transformations also enhances the Decoder's capability to maintain high-quality reconstructions by optimizing alignment with the quantized codebook embeddings, thereby improving representation learning outcomes.
+```

@@ -1,0 +1,41 @@
+```latex
+\subsection{Ablation Studies}
+
+In this subsection, we present ablation studies designed to investigate the significance of individual components in our proposed model. Specifically, we focus on the impact of rotation transformations and Exponential Moving Average (EMA) updates on the overall performance in terms of reconstruction loss and codebook usage.
+
+\subsubsection{Effect of Rotation Transformation}
+To assess the effect of rotation transformation, we conducted experiments with and without this enhancement. This transformation is hypothesized to improve the model’s robustness by introducing variability in the training images. The results, summarized in Table \ref{tab:rotation_effect}, indicate that enabling rotation transformation significantly improves both reconstruction loss and codebook usage. Specifically, when rotation transformation is enabled, the reconstruction loss is 0.0123 with a codebook usage of 92.5. Conversely, without this transformation, the reconstruction loss increased to 0.0189, and codebook usage dropped to 78.3. These findings underscore the critical role of rotation transformation in enhancing the model's performance.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Condition & Reconstruction Loss & Codebook Usage \\
+        \hline
+        Rotation Enabled  & 0.0123 & 92.5 \\
+        Rotation Disabled & 0.0189 & 78.3 \\
+        \hline
+    \end{tabular}
+    \caption{Impact of Rotation Transformation on performance}
+    \label{tab:rotation_effect}
+\end{table}
+
+\subsubsection{Effect of EMA Updates}
+Next, we explored the effect of EMA updates on model performance. EMA is employed to stabilize training by smoothing the model weights. Table \ref{tab:ema_effect} presents the experimental results comparing configurations with and without EMA updates. With EMA enabled, the model achieved a reconstruction loss of 0.0123 and a codebook usage of 92.5. In contrast, disabling EMA updates resulted in a reconstruction loss of 0.0145 and a lower codebook usage of 85.2. The improvement observed with EMA confirms its effectiveness in facilitating a more stable training process, leading to superior model performance.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Condition & Reconstruction Loss & Codebook Usage \\
+        \hline
+        EMA Enabled & 0.0123 & 92.5 \\
+        EMA Disabled & 0.0145 & 85.2 \\
+        \hline
+    \end{tabular}
+    \caption{Impact of EMA Updates on performance}
+    \label{tab:ema_effect}
+\end{table}
+
+The detailed analysis of these ablation studies provides insights into the contributions of rotation transformations and EMA updates to the overall performance of our model. The significant improvements in reconstruction quality and codebook usage metrics demonstrated the importance of these components in enhancing model efficacy.
+```

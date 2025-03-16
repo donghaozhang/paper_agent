@@ -1,0 +1,21 @@
+```latex
+\subsection{Codebook Management Strategies}
+
+This subsection highlights pivotal research aimed at enhancing codebook management within vector quantized frameworks, particularly in the context of Vector Quantized Variational AutoEncoders (VQVAE). Effective codebook management is vital to preventing codebook collapse \cite{codebookcollapse} and maximizing representation quality throughout the training process \cite{codebookutilization}. In recent works, various strategies have emerged to tackle challenges inherent to limited codebook sizes and resultant representational limitations, showcasing the ongoing struggle to balance codebook size with quality and utility.
+
+For instance, early efforts employed adaptive codebook update rules that sought to optimize the distribution of codebook entries across the input space. However, these methods often struggled with stability and convergence in large-scale applications, highlighting a critical area for improvement. Recent frameworks have introduced techniques, such as the use of dynamic codebook learning strategies and soft assignments, which have offered substantial improvements in representation fidelity. Nevertheless, existing approaches still grapple with issues of codebook saturation and ineffective utilization during training.
+
+Inspired by these challenges, we propose a novel method for Rotated Vector Quantization to enhance codebook management strategies in vector quantization frameworks. Our approach addresses the limitations identified in previous works by introducing a systematic method to implement rotation and rescaling transformations on the quantized vectors. This facilitates a more efficient exploration of the codebook space and promotes diversity among codebook entries. 
+
+To effectively tackle these challenges, our method consists of three main components: (1) implementing rotation and rescaling transformations, which aims to optimize the angular distribution of the codebook entries; (2) developing a novel gradient propagation method that ensures effective learning through non-differentiable quantization layers; and (3) implementing refined codebook management techniques that enhance codebook utilization during training.
+
+Formally, we define the transformation applied to codebook entries as follows:
+\begin{equation}
+    \mathbf{c}' = \mathbf{R}(\mathbf{c}) \cdot s,
+\end{equation}
+where \(\mathbf{c}\) represents the original codebook vector, \(\mathbf{R}\) is a rotation matrix, and \(s\) is a scaling factor. 
+
+In these transformations, \(\mathbf{R}\) is designed to optimally alter the orientation of the codebook feature space, while \(s\) adjusts the magnitude of the vectors. This approach not only fuels better gradient flow but also mitigates the risk of codebook collapse by ensuring that codebook vectors are regularly updated to encapsulate a more comprehensive representation of the data distribution.
+
+Overall, our proposed method presents an innovation in managing codebook structures, as it directly incorporates rotation and rescaling to address identified shortcomings in existing strategies. In comparison to traditional methods, our approach not only enhances the learning capabilities of quantized models but significantly mitigates long-standing challenges related to effective codebook management.
+```

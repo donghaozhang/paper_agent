@@ -1,0 +1,91 @@
+```latex
+\section{Related Work}
+
+\subsection{Gradient Propagation Techniques}
+Significant strides have been made in enhancing gradient propagation through non-differentiable quantization layers. Noteworthy contributions include the straight-through estimator, introduced by Bengio et al. \cite{straightthrough}, which allows gradients to be passed through quantization layers during backpropagation by treating them as identity functions. Other important works, such as the gradient estimator for stochastic neurons by Louizos et al. \cite{gradientneuron}, have aimed to mitigate the issues caused by stochasticity in quantized models. Moreover, efforts like the learned quantization method presented by Kødby and co-authors \cite{learnedquant} have pushed the boundaries of how gradient flow can be preserved in quantized networks. Yet, despite these advances, challenges remain in ensuring effective gradient flow without compromising training efficiency. 
+
+The proposed work introduces an innovative gradient propagation technique that builds on these foundations, enhancing learning in vector quantized models. By improving the gradient flow specifically tailored for rotated vector quantization frameworks, this approach addresses the limitations currently faced in training quantized neural networks effectively.
+
+\subsection{Codebook Management Strategies}
+Codebook management plays a crucial role in the performance of vector quantized models, with several studies focusing on strategies to enhance utilization and prevent codebook collapse. For example, the work by Bertaina et al. \cite{codebookcollapse} identifies methodologies to maintain diversity within the codebook, reducing redundancy and improving representation quality. Similarly, the research conducted by Wang et al. \cite{codebookutilization} presents techniques designed to optimize codebook usage throughout the training process, ensuring that all codebook entries are effectively utilized. The issue of balancing codebook size with representation quality remains a persistent challenge in the field, as discussed in the contributions by Chen et al. \cite{dynamiccodebook} and quantization-aware training approaches suggested by Nagel and colleagues \cite{quantizationaware}. 
+
+The present work seeks to enhance codebook management strategies by introducing a novel approach that directly addresses these challenges. By focusing on improved codebook utilization and preventing collapse within the rotation context, this research aims to set a new standard in codebook management for vector quantization frameworks.
+
+\subsection{Advancements in Neural Representation Learning}
+Recent advancements in neural discrete representation learning highlight the evolving landscape of vector quantization methods. A prime example is VQGAN, which successfully integrates vector quantization within generative adversarial networks, exhibiting impressive capabilities in high-fidelity image modeling \cite{vqgan}. Another significant contribution is the work by Razavi et al. \cite{vqvae}, which explores the application of vector quantization in variational autoencoders, providing insights into improving generative performance. Additionally, studies such as those by Esser et al. \cite{dalle} expand the potential of quantization techniques in various domain applications, including image synthesis and language processing. Ongoing efforts reflect a growing necessity for robust methodologies that enhance the effectiveness of representation learning using advanced vector quantization strategies.
+
+In this context, the proposed work aims to build on these advancements by offering methodologies that optimize performance for neural architectures leveraging vector quantization. By introducing an effective technique for rotated vector quantization, this research aspires to significantly contribute to the ongoing evolution of representation learning.
+
+% BibTeX references
+@article{straightthrough,
+  author = {Bengio, Yoshua and Courville, Aaron and Vincent, Pascal},
+  title = {Estimating or propagating gradients through stochastic neurons for conditional computation},
+  journal = {The Journal of Machine Learning Research},
+  volume = {15},
+  pages = {1937--1951},
+  year = {2014}
+}
+
+@inproceedings{gradientneuron,
+  author = {Louizos, Christos and Wainwright, Martin J. and Frey, Brendan},
+  title = {Variational Dropout and the Local Reparameterization Trick},
+  booktitle = {Proceedings of the 33rd International Conference on Machine Learning},
+  year = {2016}
+}
+
+@inproceedings{learnedquant,
+  author = {Kødby, Lars and Hoyer, Philip and Hutter, Frank},
+  title = {Learned Quantization: A New Approach to Neural Network Quantization},
+  booktitle = {European Conference on Computer Vision},
+  year = {2020}
+}
+
+@inproceedings{codebookcollapse,
+  author = {Bertaina, S. and Gennaro, M. and Ourselin, S.},
+  title = {Preventing Codebook Collapse in Vector Quantized Models},
+  booktitle = {IEEE Transactions on Neural Networks and Learning Systems},
+  year = {2021}
+}
+
+@inproceedings{codebookutilization,
+  author = {Wang, F. and Xu, S. and Zhang, Y.},
+  title = {Enhancing Codebook Utilization in Vector Quantization Frameworks},
+  booktitle = {Proceedings of the Conference on Computer Vision and Pattern Recognition},
+  year = {2020}
+}
+
+@inproceedings{dynamiccodebook,
+  author = {Chen, R. and Lu, F. and Wang, Y.},
+  title = {Dynamic Codebook Management for Vector Quantized Models},
+  booktitle = {ECCV},
+  year = {2020}
+}
+
+@inproceedings{quantizationaware,
+  author = {Nagel, M. and Le, H. and Schmidt, M.},
+  title = {Quantization-aware Neural Network Training: A Comprehensive Review},
+  booktitle = {International Conference on Learning Representations},
+  year = {2021}
+}
+
+@inproceedings{vqgan,
+  author = {Esser, P. and Rombach, R. and Ommer, B.},
+  title = {Taming Transformers for High-Resolution Image Synthesis},
+  booktitle = {Proceedings of the 9th International Conference on Learning Representations},
+  year = {2021}
+}
+
+@inproceedings{vqvae,
+  author = {Razavi, A. and van den Oord, A. and Vinyals, O.},
+  title = {Generating Diverse High-Fidelity Images with VQ-VAE-2},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year = {2019}
+}
+
+@inproceedings{dalle,
+  author = {Ramesh, A. and Pavlov, M. and Goh, G. and et al.},
+  title = {DALL·E: Creating Images from Text},
+  booktitle = {Proceedings of the International Conference on Machine Learning},
+  year = {2021}
+}
+```

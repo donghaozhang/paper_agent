@@ -1,0 +1,18 @@
+```latex
+\subsection{Gradient Propagation Techniques}
+This subsection explores significant contributions to gradient propagation through non-differentiable quantization layers, a critical component for training quantized models. One of the foundational techniques in this area is the straight-through estimator, as proposed by Hinton et al. \cite{straightthrough}, which allows gradients to bypass certain non-differentiable operations. Additionally, methods for gradient estimation through stochastic neurons have been developed, enabling effective training of quantized networks despite the presence of discrete representations \cite{gradientneuron}.
+
+Despite these advancements, current methods face challenges in effectively preserving gradient flow, which is essential for optimizing training efficiency. The limitations of existing approaches often result in suboptimal convergence and overall performance in vector quantized models. Inspired by these challenges, we propose a novel method, Rotated Vector Quantization, which addresses the gradient propagation issue directly by introducing a rotation and rescaling transformation in the quantization layer.
+
+To tackle this challenge, our method comprises three main components: a rotation and rescaling transformation, the development of an enhanced gradient propagation method, and effective codebook management techniques. Specifically, the first component, the rotation and rescaling transformation, is designed to maximize the gradient flow by transforming the input space to align better with the quantization process. In contrast, the second component focuses on developing a novel gradient propagation method that leverages continuous approximations of the quantized outputs, thus allowing gradients to flow more smoothly through the quantization layer. Finally, the third component provides codebook management techniques that ensure efficient utilization of the codebook during training, preventing issues such as codebook collapse.
+
+Formally, we define the gradient propagation mechanism in the context of our approach as follows:
+\begin{equation}
+    \nabla L = \frac{1}{N} \sum_{i=1}^{N} \nabla \mathcal{Q}(x_i; \theta, R) \cdot \nabla f(z_i)
+\end{equation}
+where \(N\) is the number of input samples, \(\mathcal{Q}\) is the quantization operator defined by the rotation \(R\), and \(f\) is the loss function.
+
+Furthermore, we illustrate that the use of the rotated transformation ensures improved localization of the input data space, thereby enhancing the overall learning dynamics. The detailed workflow of our proposed gradient propagation method emphasizes the interplay between the rotation and the subsequent training process, illustrating how strategic transformations can substantially improve convergence rates and model performance.
+
+In contrast to existing approaches, our proposal presents unique contributions that not only enhance the flow of gradients but also retain codebook effectiveness, ensuring that the benefits of vector quantization are fully realized during the training phase. This advancement in gradient propagation techniques is a crucial step toward optimizing performance in vector quantized models and illustrates the evolving landscape of neural representation learning.
+```

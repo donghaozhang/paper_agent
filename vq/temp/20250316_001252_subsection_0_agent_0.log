@@ -1,0 +1,15 @@
+```latex
+\subsection{Gradient Propagation Techniques}
+
+In this work, we propose a novel method for Rotated Vector Quantization to address challenges faced in gradient propagation through non-differentiable vector quantization layers. Inspired by techniques such as the straight-through estimator \cite{straightthrough} and advancements in stochastic gradient estimation through neurons \cite{gradientneuron}, our approach aims to enhance the efficacy of training quantized models by improving gradient flow.
+
+Historically, traditional methods for gradient propagation in quantized networks tend to ignore the discrete nature of quantization, which can lead to suboptimal training dynamics. For example, the straight-through estimator serves as a popular solution that allows gradients to flow through quantization layers as if they were identity mappings. While this technique simplifies backpropagation, it does not fully leverage the intricate characteristics of vector quantization, which can impede performance in more advanced structures like Vector Quantized Variational Autoencoders (VQ-VAEs). In contrast, recent innovations involve specialized algorithms that focus on estimating gradients more accurately, providing robustness during the learning process \cite{neuronestimating}.
+
+Recently, methodologies such as the incorporation of rotation and rescaling transformations have been investigated to augment gradient propagation. These approaches enhance the flow of gradients through the quantization layers by aligning quantized outputs with continuous representations, thereby improving convergence rates and model performance. A notable example is the work on employing rotation and rescaling transformations directly within the training cycle of VQ-VAEs to mitigate issues of stagnant gradient flow and to ensure effective utilization of the codebook during the training phase \cite{vqvae_rotated}. 
+
+However, several limitations still persist in existing gradient propagation strategies. The effectiveness of current methods tends to degrade when applied to larger codebooks or more complex latent spaces, leading to challenges such as codebook collapse and underutilization. Furthermore, many existing techniques do not adequately address the spatial incoherence introduced by quantization, which results in diminished representation quality.
+
+Our proposed approach builds upon these foundations by introducing a dedicated gradient propagation mechanism that employs rotation and rescaling alongside innovative codebook management techniques aimed at maintaining optimal codebook utilization. This could potentially enhance the learning performance of vector quantized models and prevent limitations associated with insufficient gradient flow \cite{vq_implementation}.
+
+In summary, while the gradient propagation landscape in quantized models has evolved with various methodologies, our work contributes to this field by proposing a tailored solution that addresses the core limitations faced in gradient estimation and effectively ties into broader advancements within vector quantization literature.
+```

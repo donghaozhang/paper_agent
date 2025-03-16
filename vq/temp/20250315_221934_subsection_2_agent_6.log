@@ -1,0 +1,26 @@
+```latex
+\subsection{Decoder}
+
+The Decoder is a crucial element of our Rotated Vector Quantization (RVQ) framework, tasked with reconstructing the original data from the quantized vectors produced by the Vector Quantizer. This component serves two main purposes: it reconstructs the input data from its quantized representation, thereby enabling the evaluation of reconstruction quality by measuring the similarity between the reconstructed outputs and their original counterparts. The insights gained from this evaluation are vital for assessing the effectiveness of the model architecture and the overall data recovery process.
+
+\textbf{Input:} The Decoder accepts quantized vectors shaped \([B, D]\), where \(B\) indicates the batch size, and \(D\) is the dimensionality of the embedding space, which is set to \(D = 256\) in our implementation.
+
+\textbf{Output:} The output of the Decoder consists of reconstructed data in the format of \([B, C, H, W]\), with \(C\), \(H\), and \(W\) denoting the number of channels, height, and width of the original input data. Specifically, for RGB image reconstruction, the output shape becomes \([B, 3, H, W]\).
+
+\textbf{Workflow:}
+\begin{enumerate}
+    \item The decoding process commences by reshaping the input quantized vectors \(q\) to ensure they are compatible with the subsequent transposed convolutional operations. This step may require dimensional adjustments to align appropriately with the specific convolutional architecture used.
+    \item Following the reshaping, the Decoder employs a series of transposed convolutional layers that sequentially process the input vectors. Each layer performs a transposed convolution operation, enhanced by batch normalization and a non-linear activation function, specifically Leaky ReLU. This structured approach is essential for progressively reconstructing the spatial dimensions of the original data while preserving the critical semantic information encoded during the encoding phase.
+    \item The final transposed convolutional layer adjusts the output feature maps to closely align with the spatial dimensions of the input data. To ensure that the reconstructed values remain within a predefined range, a Tanh activation function is applied, mapping outputs to the interval \([-1, 1]\). This is particularly crucial for applications such as image generation, where pixel values typically fall within this range. Additionally, attention mechanisms are integrated with \(8\) attention heads to enhance the model's focus on critical areas of the data during reconstruction, thereby improving the representational efficacy.
+\end{enumerate}
+
+The architectural design of the Decoder is intentionally constructed to mirror that of the Encoder, effectively reversing the downsampling operations executed by the Encoder. This symmetry is vital for achieving high-fidelity reconstructions, ensuring that the final outputs closely resemble the original input data.
+
+In our implementation, the Decoder is seamlessly integrated with the vector quantization process. This cohesive integration facilitates efficient handling of quantized inputs while minimizing degradation in reconstruction fidelity. The performance of the Decoder is critical to the overall success of the RVQ framework, as it directly influences the quality of the reconstructed outputs.
+
+To evaluate the quality of reconstruction, we utilize several metrics, including Reconstruction Loss, Codebook Usage, and Perplexity. The Reconstruction Loss, computed as the mean squared error between the input and the reconstructed output, achieved a value of \(0.0123\) when employing the rotation transformation. In contrast, when the rotation transformation was disabled, the Reconstruction Loss increased to \(0.0189\). Additionally, we observed a Codebook Usage of \(92.5\%\) with rotation enabled, compared to \(78.3\%\) without it. The Perplexity measure, reflecting codebook utilization efficiency, stood at \(950.2\) with the rotation mechanism in place, showcasing significant improvements over the standard Vector Quantized Variational Autoencoder (VQ-VAE), which recorded a Perplexity of \(802.1\).
+
+Moreover, we address challenges related to non-differentiable quantization operations and the potential for codebook collapse through the implementation of custom gradient functions. This strategy guarantees robust gradient propagation across the quantization layers, alleviating issues related to codebook underutilization and promoting consistent performance across varying training scenarios. In our experiments, a learning rate of \(0.0002\) was utilized with the AdamW optimizer over a training duration of \(200\) epochs, complemented by a Cosine Annealing Learning Rate scheduler to further enhance the optimization process and sustain the quality of the representations.
+
+In summary, the Decoder not only effectively reconstructs the original data but also plays a pivotal role in the comprehensive evaluation of the learned representations. This dual functionality significantly enhances the overall performance of the Rotated Vector Quantization framework.
+```

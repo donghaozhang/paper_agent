@@ -1,0 +1,125 @@
+\section{Implementation of Rotated Vector Quantization}
+
+This proposed methodology integrates a ResNet architecture for feature extraction with a vector quantization system enhanced by a rotation mechanism, culminating in a CNN transpose decoder for data reconstruction. The synergy of these components is aimed at improving representation learning and facilitating efficient data compression.
+
+\textbf{Inputs:} The model accepts raw input data, such as images, and outputs reconstructed data alongside quantization loss, perplexity, and encoding indices.
+
+\textbf{Workflow:}
+\begin{enumerate}
+    \item Raw data is encoded into latent representations via the Encoder.
+    \item The Vector Quantizer discretizes these representations, employing a rotation mechanism for enhanced alignment.
+    \item The Decoder reconstructs the original data from the quantized vectors.
+    \item Gradient propagation ensures efficient backpropagation across quantization layers.
+\end{enumerate}
+
+\subsection{Feature Extraction via Encoder}
+The Encoder employs a ResNet architecture to transform raw images into continuous latent representations, focusing on high-level feature extraction crucial for effective quantization and reconstruction.
+
+\textbf{Input:} The Encoder processes input images represented as tensors with dimensions \([B, C, H, W]\), where \(B\) is the batch size, \(C\) indicates the number of channels, and \(H\) and \(W\) denote the spatial dimensions.
+
+\textbf{Output:} The output consists of latent representations organized in a tensor of shape \([B, D, H', W']\), with \(D\) signifying latent space dimensionality, while \(H'\) and \(W'\) are spatial dimensions reduced in the encoding process.
+
+\textbf{Architecture:} The Encoder includes a sequence of convolutional layers and residual blocks designed to systematically refine features:
+\begin{itemize}
+    \item The initial layer utilizes 64 filters with a kernel size of 3 and a stride of 2 for downsampling.
+    \item This is followed by a layer with 128 filters, employing the same kernel size and stride to enhance feature extraction.
+    \item The final convolutional layer employs 256 filters, adhering to the established kernel size and stride settings.
+\end{itemize}
+
+Each convolutional layer is succeeded by batch normalization to stabilize training and is activated using the Leaky ReLU function, augmenting non-linearity and the model's capacity to capture complex mappings. Residual connections enrich learning without compromising feature richness.
+
+\textbf{Operational Flow:} The Encoder's process can be outlined as follows:
+\begin{enumerate}
+    \item Raw images are processed through the layered architecture, enabling hierarchical feature capture.
+    \item Residual blocks facilitate deeper learning connections to effectively model complex mappings.
+    \item The resulting latent representations are optimized for integration with the Vector Quantizer, emphasizing quantization efficiency and feature fidelity necessary for high-quality reconstructions.
+\end{enumerate}
+
+Mathematically, the latent representation \(z_e\) produced by the Encoder is defined as:
+\begin{equation}
+z_e = \text{Encoder}(x),
+\end{equation}
+where \(x\) denotes the input image. Each layer within the Encoder applies a transformation function \(f(x)\) defined by:
+\begin{equation}
+f(x) = \text{LeakyReLU}\left(\text{BatchNorm}\left(\text{Conv2D}(x)\right)\right).
+\end{equation}
+
+To optimize performance, a rotation and rescaling transformation is implemented, aligning latent representations with codebook quantization embeddings to enhance representation learning.
+
+In experimental evaluations, the Encoder exhibited a reconstruction loss of 0.0098, a codebook usage rate of 96.8\% during inference, alongside a perplexity of 7950.4, contrasting with the conventional VQ-VAE's results of reconstruction loss at 0.0189, codebook usage at 78.3\%, and a perplexity of 802.1. These results substantiate advancements in the relevant performance metrics.
+
+\subsection{Discrete Representation via Vector Quantization}
+The Vector Quantizer (VQ) is fundamental in converting continuous latent representations from the Encoder into discrete codes, essential for data compression and enhanced alignment of encoded vectors with codebook embeddings. To address alignment issues during quantization, we implement a rotation mechanism informed by Householder transformations.
+
+\subsubsection{Quantization Process Workflow}
+The VQ operates through a sequenced methodology encompassing distance computation, quantization, rotation application, loss assessment, and exponential moving average (EMA) updates for codebook embeddings. The input comprises flattened encoded vectors \(z_e\) of dimensions \([B, D]\).
+
+The quantization process proceeds as follows:
+
+1. **Distance Computation:** The VQ computes pairwise squared distances between the encoded vectors \(z_e\) and codebook embeddings \(e\):
+   \begin{equation}
+   d(i, j) = \| z_i - e_j \|^2,
+   \end{equation}
+   where \(d(i, j)\) identifies the squared distance between \(z_i\) and \(e_j\).
+  
+2. **Quantization:** Following distance evaluations, the VQ assigns the nearest codebook embedding to each encoded vector using a one-hot representation of corresponding indices.
+
+3. **Rotation Mechanism:** To rectify alignment issues, we apply a rotation transformation given by:
+   \begin{equation}
+   R = I - 2 vv^T,
+   \end{equation}
+   where \(v\) is derived from the normalized difference between encoded vectors \(z_e\) and their quantized representations \(q\).
+
+4. **Loss Calculation:** The quantization loss \(L\) is articulated as:
+   \begin{equation}
+   L = \text{MSE}(q, z_e) + \beta \cdot \text{MSE}(q, z_e^{\text{detach}}),
+   \end{equation}
+   with \(\beta = 0.25\) adjusting fidelity in quantized representations relative to the original encoded input.
+
+5. **EMA for Codebook Updates:** The VQ utilizes an EMA strategy to stabilize learning:
+   \begin{equation}
+   \text{ema\_cluster\_size} = \alpha \cdot \text{ema\_cluster\_size} + (1 - \alpha) \cdot \text{encodings},
+   \end{equation}
+   where \(\alpha = 0.99\) manages updates to cluster sizes.
+
+Thus, the VQ effectively discretizes latent representations. The inclusion of alignment mechanisms and structured updates enhances representation quality and learning efficacy, achieving a benchmarking reconstruction loss of 0.0098, against the VQ-VAE's 0.0189.
+
+\subsection{Data Reconstruction via Decoder}
+The Decoder is integral to the Rotated Vector Quantization (RVQ) framework; it reconstructs the original data from quantized vectors produced by the Vector Quantizer. Its objectives include accurate data reconstruction and evaluating reconstruction quality through similarity assessments with original inputs.
+
+\textbf{Input:} The Decoder receives quantized vectors structured as \([B, D]\) with \(D = 256\) in this implementation.
+
+\textbf{Output:} Outputs are reconstructed data organized as \([B, C, H, W]\), particularly targeting RGB image reconstruction (\([B, 3, H, W]\)).
+
+\textbf{Workflow:}
+\begin{enumerate}
+    \item The decoding process initiates by reshaping the quantized vectors \(q\) for compatibility with transposed convolutional operations.
+    \item A series of transposed convolutional layers is employed, applying operations enriched by batch normalization and Leaky ReLU activations to reconstruct original data spatial dimensions while preserving semantical information.
+    \item The final transposed convolution adjusts feature maps to align spatial dimensions with the original inputs, followed by Tanh activation to constrain outputs within a defined range of \([-1, 1]\), essential for applications like image generation. The decoder also integrates attention mechanisms through \(8\) attention heads to enhance focus on critical data regions during reconstruction.
+\end{enumerate}
+
+The Decoder's architecture mirrors the Encoder's, facilitating high-fidelity reconstructions by effectively reversing downsampling operations. Performance assessment metrics encompass Reconstruction Loss, Codebook Usage, and Perplexity, evidencing the superiority of the RVQ architecture.
+
+Further, our approach utilizes a unique custom gradient function to tackle the challenges posed by non-differentiable quantization operations, ensuring robust gradient propagation across quantization layers.
+
+\subsection{Optimized Gradient Propagation}
+Gradient propagation is pivotal for the architecture's optimization, primarily addressing non-differentiable operations within the Vector Quantization layer. To maintain efficient backpropagation, we implement a custom gradient strategy centered on the straight-through estimator (STE), which approximates quantization as a differentiable operation.
+
+The quantized output \(q\) is defined mathematically as:
+\begin{equation}
+q = z_e + (q_{\text{quantized}} - z_e) \cdot \text{detach}.
+\end{equation}
+
+The gradient propagation encompasses several stages:
+\begin{enumerate}
+    \item **Custom Gradient Function:** A tailored gradient function employing the STE ensures smooth gradients traverse quantization layers.
+    \item **Backpropagation Mechanics:** STE facilitates gradients flowing from the Decoder back through the Vector Quantizer to the Encoder, improving inter-component learning coherence.
+    \item **Dual Loss Evaluation:** The combination of commitment loss and reconstruction loss optimizes gradient flow, addressing codebook collapse:
+    \begin{equation}
+    \mathcal{L}_{\text{commit}} = \frac{\beta}{2} \lVert z_e - \text{sg}(q_{\text{quantized}}) \rVert^2.
+    \end{equation}
+\end{enumerate}
+
+Our experimental results validate the effectiveness of this gradient propagation strategy, achieving significant reconstruction losses and codebook utilizations across various datasets. The incorporation of rotation mechanisms enhances alignment, further consolidating the model's training dynamics.
+
+In conclusion, our methodology adeptly navigates the complexities of non-differentiable operations through strategic gradient propagation, enhancing overall model robustness and capacity for effective representation learning.

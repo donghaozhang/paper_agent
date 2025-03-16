@@ -1,0 +1,38 @@
+```latex
+\subsection{Gradient Propagation}
+
+Gradient propagation is a critical component in the optimization process of our framework, particularly regarding the challenges posed by non-differentiable quantization operations within the Vector Quantization layer. These quantization operations introduce discontinuities that can impede effective backpropagation, necessitating the development of a specialized strategy to ensure robust gradient flow throughout the architecture.
+
+To address these challenges, we implement a custom gradient function designed specifically for the needs of our model. A central feature of this strategy is the straight-through estimator (STE), which approximates the quantization process as a differentiable operation. This approximation allows gradients to traverse smoothly through quantization layers, effectively preserving essential information and enhancing the learning dynamics between the Encoder and Decoder components of our model.
+
+We mathematically define the quantized output \( q \) as follows:
+
+\begin{equation}
+q = z_e + (q_{\text{quantized}} - z_e) \cdot \text{detach}
+\end{equation}
+
+where \( z_e \) represents the continuous latent representation produced by the Encoder, and \( q_{\text{quantized}} \) is the output from the Vector Quantizer. This expression establishes a crucial connection between the continuous and quantized representations, facilitating effective representation learning and optimizing the overall performance of our framework.
+
+The gradient propagation process unfolds through several pivotal steps, as described below:
+
+\begin{enumerate}
+    \item **Custom Gradient Function**: We define a tailored gradient function that utilizes the straight-through estimator to guide backpropagation through the quantization layers. This function mitigates the barriers posed by non-differentiable quantization techniques, enabling a continuous flow of gradients throughout the optimization process.
+
+    \item **Backpropagation Mechanics**: The STE creates a pathway for gradient information to flow from the Decoder, through the Vector Quantizer, and back to the Encoder. This augmented gradient flow is essential for coherent learning across the entire architecture, improving interdependencies among components and enhancing overall model performance.
+
+    \item **Dual Loss Evaluation**: During our optimization process, the Vector Quantizer computes both the commitment loss and reconstruction loss. This dual loss framework enriches the gradient flow and augments learning dynamics by addressing potential issues like codebook collapse and inefficient utilization of codebook entries, which have been previously noted in vector quantization literature. The commitment loss is formulated as follows:
+
+    \begin{equation}
+    \mathcal{L}_{\text{commit}} = \frac{\beta}{2} \lVert z_e - \text{sg}(q_{\text{quantized}}) \rVert^2
+    \end{equation}
+
+    where \(\beta\) is a hyperparameter that regulates the commitment cost. The incorporation of both the commitment and reconstruction losses synergistically optimizes gradient propagation, leading to improved learning efficacy.
+
+\end{enumerate}
+
+Furthermore, the integration of a rotation mechanism based on Householder transformations within the Vector Quantizer significantly enhances the alignment of quantized vectors with the underlying data structure. This optimization mitigates misalignment issues that can arise during training, leading to improved representation quality and training efficiency.
+
+Our experimental results validate the effectiveness of our gradient propagation strategy. For instance, when evaluated on the CIFAR-10 dataset, our system achieved a reconstruction loss of 0.0098 and a codebook usage of 96.8\%. In contrast, standard Vector Quantization Variational Autoencoders (VQ-VAE) reported a reconstruction loss of 0.0189 with a codebook usage of only 78.3\%. Moreover, when applied to the more extensive ImageNet dataset, which contains over a million samples, our framework consistently outperformed existing models, evidencing the benefits of our proposed methodology.
+
+In summary, our approach harnesses the straight-through estimator and a custom gradient strategy to adeptly navigate the complexities of non-differentiable operations. This innovative methodology not only bolsters the robustness of our model but also enhances its capacity for effective representation learning while maintaining theoretical consistency across the optimization landscape. The substantial improvements in representation quality and learning dynamics underscore the competitiveness of our method within the realm of neural discrete representation learning.
+```

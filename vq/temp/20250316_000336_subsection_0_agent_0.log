@@ -1,0 +1,15 @@
+```latex
+\subsection{Experimental Settings}
+
+We conduct experiments on the CIFAR-10 and ImageNet datasets, adhering to standard protocols for preprocessing and evaluation. The CIFAR-10 dataset consists of 60,000 labeled images divided into 10 classes, with each image having a resolution of 32x32 pixels and three color channels. The ImageNet dataset contains 1,281,167 images across 1,000 classes, with an image resolution of 256x256 pixels. For both datasets, images are normalized to ensure consistent input for the neural network.
+
+The evaluation of our proposed method is based on several metrics, including Reconstruction Loss, Codebook Usage, and Perplexity. Reconstruction Loss measures how well the model can recreate the original input from its compressed representation. Codebook Usage assesses the effectiveness of the vector quantization by analyzing how many of the available codebook entries are utilized during model training. Perplexity, often used in language modeling, provides insights into the uncertainty of the model's predictions.
+
+To establish a benchmark for our experiments, we compare our method against several baseline approaches, including Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), and conventional Vector Quantization methods. This comparison is crucial to evaluate the relative performance and effectiveness of our proposed methodology.
+
+Our implementation leverages the PyTorch library, running on an NVIDIA GeForce RTX 3080 GPU with 10GB of VRAM and 32GB of RAM. We utilize a batch size of 128 and employ the AdamW optimizer with an initial learning rate of 0.0002, along with a weight decay of 0.01. The training follows a Cosine Annealing Learning Rate schedule over 300 epochs. The encoder architecture is built on a ResNet structure featuring six residual blocks, while the decoder employs a Convolutional Transpose architecture enhanced with an Attention mechanism.
+
+Table \ref{tab:datasets} summarizes the datasets and their characteristics. Our training protocol ensures that data is divided into training, validation, and testing sets appropriately, balancing the need for robust training with adequate evaluation opportunities. 
+
+In conclusion, our experimental setup provides a thorough framework for assessing our refined method, utilizing comprehensive datasets and baselines, rigorous performance metrics, and detailed implementation practices, setting the stage for meaningful analysis and comparison with existing methodologies.
+```

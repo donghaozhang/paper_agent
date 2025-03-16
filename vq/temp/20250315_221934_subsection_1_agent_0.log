@@ -1,0 +1,41 @@
+```latex
+\subsection{Vector Quantizer}
+
+The Vector Quantizer (VQ) plays a crucial role in our architecture by transforming continuous latent representations produced by the Encoder into distinct discrete codes. This transformation is vital for efficient data representation and enhances the alignment between encoded vectors and codebook embeddings, thereby improving the performance of downstream tasks such as reconstruction and retrieval.
+
+\subsubsection{Overview of the Vector Quantization Process}
+
+The VQ module executes its task through four main phases: distance computation, quantization, rotation mechanism, and loss calculation. It begins by receiving the flattened encoded vectors \( z_e \) of shape \([B, D]\), where \( B \) denotes the batch size and \( D \) represents the latent space dimensionality. The module outputs quantized vectors of shape \([B, D]\), along with quantization loss, perplexity, and encoding indices.
+
+The quantization workflow is delineated as follows:
+
+1. **Distance Computation**: The VQ calculates pairwise distances between the encoded vectors \( z_e \) and the codebook embeddings. This is formalized through the equation:
+\begin{equation}
+d(i, j) = \| z_i - e_j \|^2
+\end{equation}
+where \( d(i, j) \) represents the squared distance between an encoded vector \( z_i \) and a codebook embedding \( e_j \). This computation enables the identification of the nearest embedding for each encoded vector.
+
+2. **Quantization**: Utilizing the computed distances, the corresponding nearest codebook embedding is selected for each encoded vector. This selection leads to a one-hot encoding of the indices corresponding to the chosen codebook entries.
+
+3. **Rotation Mechanism**: To enhance the alignment of the encoded vectors with their quantized representations, the VQ employs a rotation matrix when this feature is activated. This rotation matrix, derived through the Householder transformation, is expressed as:
+\begin{equation}
+R = I - 2vv^T
+\end{equation}
+where \( v \) is determined from the normalized difference between the current encoded vectors \( z_e \) and their associated quantized representations \( q \). This rotation adjustment results in modified quantized outputs that potentially improve the quality of extracted features.
+
+4. **Loss Calculation**: The quantization loss \( L \) is characterized as a combination of commitment and reconstruction losses, defined as:
+\begin{equation}
+L = \text{MSE}(q, z_e) + \beta \cdot \text{MSE}(q, z_e^{\text{detach}})
+\end{equation}
+where \( \beta \) signifies the commitment cost, ensuring an optimal balance between the quality of the quantized representation and the fidelity of the input encoded vectors.
+
+5. **Exponential Moving Average (EMA) for Weight Updates**: During training, the VQ module updates its codebook representations through an EMA strategy, which helps stabilize the learning process. This adaptation ensures that the embeddings evolve based on the cluster sizes, governed by:
+\begin{equation}
+\text{ema\_cluster\_size} = \alpha \cdot \text{ema\_cluster\_size} + (1 - \alpha) \cdot \text{encodings}
+\end{equation}
+where \( \alpha \) is the decay factor used in updating the cluster size.
+
+Overall, the VQ component not only quantizes the latent representations but also integrates mechanisms that promote optimal representation of the input data through systematic updates and alignment adjustments. 
+
+Through these multifaceted operations, the Vector Quantizer not only addresses the critical challenges involved in quantization but also enhances the overall performance of the model by providing robust representation capabilities that facilitate effective data reconstruction and information retrieval.
+```

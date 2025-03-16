@@ -1,0 +1,113 @@
+```latex
+\section{Rotated Vector Quantization Architecture}
+
+\subsection{Feature Extraction via ResNet Architecture}
+The proposed methodology employs a ResNet architecture for effective feature extraction, transforming raw input images into continuous latent representations. The architecture excels in preserving essential information while extracting high-level features, crucial for subsequent processes of quantization and data reconstruction.
+
+\textbf{Input:} The Encoder processes input images represented as tensors of shape \([B, C, H, W]\), where \(B\) denotes the batch size, \(C\) indicates the number of channels, and \(H\) and \(W\) specify the height and width of the images.
+
+\textbf{Output:} The output consists of latent representations shaped as \([B, D, H', W']\), where \(D\) represents the dimensionality of the latent space, and \(H'\) and \(W'\) are the spatial dimensions post-encoding.
+
+\textbf{Architecture:} The Encoder integrates a sequence of convolutional layers and residual blocks, specifically designed to enhance feature extraction:
+\begin{itemize}
+    \item The first layer utilizes 64 filters with a kernel size of 3 and a stride of 2 for downsampling.
+    \item This is followed by a layer containing 128 filters, maintaining the kernel size and stride to further refine features.
+    \item The final convolutional layer consists of 256 filters, adhering to the same configuration.
+\end{itemize}
+
+Following each convolutional layer, batch normalization is applied to enhance training stability, combined with the Leaky ReLU activation function to introduce non-linearity. The integration of residual connections facilitates deeper learning while retaining complex patterns.
+
+\textbf{Workflow:} The operational framework of the Encoder is as follows:
+\begin{enumerate}
+    \item Input images pass through the layered architecture, allowing a hierarchical feature capture.
+    \item Residual blocks enhance learning capacity, promoting effective mapping of inputs to latent representations.
+    \item The generated latent representations prepare for integration with the Vector Quantizer, ensuring quantization efficiency.
+\end{enumerate}
+
+The latent representation \(z_e\) produced by the Encoder is mathematically expressed as:
+
+\begin{equation}
+z_e = \text{Encoder}(x),
+\end{equation}
+
+where \(x\) stands for the input image. The transformation function applied at each layer is defined as:
+
+\begin{equation}
+f(x) = \text{LeakyReLU}\left(\text{BatchNorm}\left(\text{Conv2D}(x)\right)\right),
+\end{equation}
+
+which is vital for effective representation learning. To optimize performance, we incorporate a rotation and rescaling transformation to align latent representations with codebook embeddings. 
+
+Experimental results demonstrate a reconstruction loss of 0.0098, with a codebook usage of 96.8\% during inference, and a perplexity of 7950.4, compared to the conventional Standard VQ-VAE, which yielded a higher reconstruction loss of 0.0189, a codebook usage of 78.3\%, and a perplexity of 802.1. These findings indicate significant advancements in representation learning metrics.
+
+\subsection{Vector Quantization with Rotation Mechanism}
+The Vector Quantizer (VQ) is instrumental in transforming continuous latent representations from the Encoder into discrete codes, thereby facilitating efficient data compression and enhancing alignment between encoded vectors and codebook embeddings. To address alignment issues, we employ a rotation mechanism using Householder transformations.
+
+\subsubsection{Quantization Process}
+The VQ operates through the following steps:
+1. **Distance Computation:** The squared distances between encoded vectors \( z_e \) and codebook embeddings \( e \) are calculated as:
+
+   \begin{equation}
+   d(i, j) = \| z_i - e_j \|^2,
+   \end{equation}
+
+   which is essential for identifying the closest embedding for quantization.
+
+2. **Quantization:** The nearest codebook embedding is identified for each encoded vector, translating continuous representations into a discrete format via one-hot encoding of indices.
+
+3. **Rotation Mechanism:** A rotation transformation based on the Householder transformation is defined as:
+
+   \begin{equation}
+   R = I - 2 vv^T,
+   \end{equation}
+
+   where \( v \) is derived from the normalized vector difference between encoded vectors \( z_e \) and quantized counterparts \( q \). This transformation enhances alignment for improved feature extraction.
+
+4. **Loss Calculation:** The quantization loss \( L \) is expressed as:
+
+   \begin{equation}
+   L = \text{MSE}(q, z_e) + \beta \cdot \text{MSE}(q, z_e^{\text{detach}}),
+   \end{equation}
+
+   with \(\beta = 0.25\) adjusting the commitment to balance fidelity in quantized representations.
+   
+5. **Codebook Updates via Exponential Moving Average (EMA):** The VQ applies an EMA strategy expressed as:
+
+   \begin{equation}
+   \text{ema\_cluster\_size} = \alpha \cdot \text{ema\_cluster\_size} + (1 - \alpha) \cdot \text{encodings},
+   \end{equation}
+
+   where \(\alpha = 0.99\) governs adaptive updates for stability.
+
+Our implementation of the VQ resulting in a reconstruction loss of 0.0098 and a codebook utilization of 96.8\% highlights substantial improvements over traditional models with significant performance metrics.
+
+\subsection{Data Reconstruction via Transposed Convolution}
+The Decoder reconstructs original data from the quantized vectors produced by the Vector Quantizer, facilitating evaluation of reconstruction quality.
+
+\textbf{Input:} The Decoder accepts quantized vectors shaped as \([B, D]\), with \(D = 256\).
+
+\textbf{Output:} Outputs are structured as \([B, C, H, W]\), corresponding to the original input data dimensions.
+
+\textbf{Workflow:}
+\begin{enumerate}
+    \item Input quantized vectors \(q\) are reshaped to fit the subsequent transposed convolution operations.
+    \item A sequence of transposed convolutional layers, each with batch normalization and Leaky ReLU activation, reconstructs the original data via three layers with 128, 64, and 3 filters.
+    \item The final transposed layer generates outputs corresponding to input dimensions, applying a Tanh activation function for value normalization.
+\end{enumerate}
+
+The Decoder’s architecture mirrors that of the Encoder, crucial for achieving high-fidelity reconstructions. In conjunction with quantization, it minimizes fidelity loss, resulting in a reconstruction loss of 0.0098 with rotation, significant compared to 0.0189 without.
+
+Further, to address gradient flow challenges posed by non-differentiable quantization, we implement a custom gradient function integrating the straight-through estimator (STE). The quantized output \( q \) is defined as:
+
+\begin{equation}
+q = z_e + (q_{\text{quantized}} - z_e) \cdot \text{detach},
+\end{equation}
+
+facilitating effective representation learning.
+
+The gradient propagation process incorporates:
+1. **Custom Gradient Function:** Utilizing the STE enables effective backpropagation through quantization layers.
+2. **Backpropagation Mechanics:** This allows gradients to flow from the Decoder through to the Encoder, improving learning coherence.
+3. **Dual Loss Evaluation:** The commitment loss and reconstruction loss provide a framework enhancing gradient dynamics.
+
+In summary, our methodology emphasizes robust gradient propagation and representation learning while maintaining theoretical consistency, enhancing performance metrics across diverse datasets.
