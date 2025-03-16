@@ -8,6 +8,52 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.openai_utils import GPTClient
 from section_composer import SectionComposer, setup_logging
 
+'''
+# Introduction Composition Flow
+
+```mermaid
+graph TD
+    introduction_composing["introduction_composing()"] --> setup_logging[Setup Logging]
+    setup_logging --> composer[Create IntroductionComposer]
+    composer --> setup_benchmark[Setup Benchmark Path]
+    setup_benchmark --> compose_section[IntroductionComposer.compose_section()]
+    
+    compose_section --> read_existing_sections[Read Existing Sections]
+    read_existing_sections --> methodology[Methodology Section]
+    read_existing_sections --> related_work[Related Work Section]
+    read_existing_sections --> experiments[Experiments Section]
+    
+    compose_section --> find_task1_content[Find Task1 Content]
+    find_task1_content --> benchmark_data[Benchmark Data]
+    
+    compose_section --> structure_generation[Iterative Structure Generation]
+    
+    subgraph "Iterative Structure Generation"
+        structure_generation --> generate_or_revise_content_bundle[generate_or_revise w/ Content Bundle]
+        generate_or_revise_content_bundle --> generate_or_revise_task1[generate_or_revise w/ Task1]
+        generate_or_revise_task1 --> write_temp_log[Write Temp Log]
+        write_temp_log --> save_checkpoint[Save Structure Checkpoint]
+    end
+    
+    structure_generation --> detailize_complete_introduction[Detailize Complete Introduction]
+    detailize_complete_introduction --> detailize_with_content_bundle[detailize_subsection w/ Content Bundle]
+    detailize_with_content_bundle --> detailize_with_task1[detailize_subsection w/ Task1]
+    detailize_with_task1 --> write_introduction_log[Write Introduction Log]
+    
+    detailize_complete_introduction --> final_checklist[Final Writing Checklist]
+    final_checklist --> save_final_output[Save Final Output]
+    
+    classDef process fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef io fill:#bbf,stroke:#333,stroke-width:2px;
+    
+    class compose_section,structure_generation,detailize_complete_introduction,final_checklist process;
+    class read_existing_sections,find_task1_content,save_final_output io;
+```
+
+This diagram shows the flow of the introduction composition process. The process incorporates content from
+existing sections and benchmark data to create a coherent introduction for the paper.
+'''
+
 class IntroductionComposer(SectionComposer):
     def __init__(self, research_field: str, structure_iterations: int = 3):
         super().__init__(research_field, "introduction", structure_iterations)

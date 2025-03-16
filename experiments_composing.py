@@ -8,6 +8,57 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.openai_utils import GPTClient
 from section_composer import SectionComposer, setup_logging
 
+'''
+# Experiments Composition Flow
+
+```mermaid
+graph TD
+    experiments_composing["experiments_composing()"] --> setup_logging[Setup Logging]
+    setup_logging --> composer[Create ExperimentsComposer]
+    composer --> setup_paths[Setup Project Paths]
+    setup_paths --> compose_section[ExperimentsComposer.compose_section()]
+    
+    compose_section --> read_project_structure[Read Project Structure]
+    read_project_structure --> dir_tree[Directory Tree]
+    read_project_structure --> code_contents[Code Contents]
+    
+    compose_section --> generate_project_summary[Generate Project Summary]
+    
+    compose_section --> read_agent_files[Read Agent Files]
+    read_agent_files --> experiment_analysis_agent[Experiment Analysis Agent]
+    read_agent_files --> machine_learning_agent[Machine Learning Agent]
+    
+    compose_section --> structure_generation[Iterative Structure Generation]
+    
+    subgraph "Iterative Structure Generation"
+        structure_generation --> generate_or_revise[generate_or_revise_structure]
+        generate_or_revise --> find_and_fill_results[find_and_fill_results]
+        find_and_fill_results --> write_temp_log[Write Temp Log]
+        write_temp_log --> save_checkpoint[Save Checkpoint]
+    end
+    
+    structure_generation --> subsection_detailization[Detailize Subsections]
+    
+    subgraph "Subsection Detailization"
+        subsection_detailization --> detailize_subsection[detailize_subsection]
+        detailize_subsection --> write_subsection_log[Write Subsection Log]
+    end
+    
+    subsection_detailization --> fuse_subsections[Fuse Subsections]
+    fuse_subsections --> final_checklist[Final Writing Checklist]
+    final_checklist --> save_final_output[Save Final Output]
+    
+    classDef process fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef io fill:#bbf,stroke:#333,stroke-width:2px;
+    
+    class compose_section,structure_generation,subsection_detailization,fuse_subsections,final_checklist process;
+    class read_project_structure,read_agent_files,save_final_output io;
+```
+
+This diagram shows the flow of the experiments composition process. The process analyzes project structure
+and agent outputs to extract experimental details, results, and insights for presentation in the paper.
+'''
+
 class ExperimentsComposer(SectionComposer):
     def __init__(self, research_field: str, structure_iterations: int = 3, gpt_model='gpt-4o-mini-2024-07-18'):
         super().__init__(research_field, "experiments", structure_iterations)

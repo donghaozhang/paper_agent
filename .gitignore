@@ -1,5 +1,6 @@
 # Ignore API key files
 run_paper_custom.ps1
+run_paper_custom.sh
 
 # Ignore Python bytecode files
 __pycache__/

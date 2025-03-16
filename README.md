@@ -49,6 +49,8 @@ conda activate paper-agent
 
 ## Usage
 
+### Windows
+
 1. Set up API keys in a custom PowerShell script:
 
 ```powershell
@@ -71,20 +73,105 @@ python writing.py --research_field $research_field --instance_id $instance_id
 ./run_paper_custom.ps1
 ```
 
+### Ubuntu/macOS
+
+1. Set up API keys in a custom bash script:
+
+```bash
+# Example: run_paper_custom.sh
+export ANTHROPIC_API_KEY="your-anthropic-key"
+export OPENAI_API_KEY="your-openai-key"
+export GEMINI_API_KEY="your-gemini-key"
+
+# Set the research field and instance ID
+research_field="vq"  # Options: vq, gnn, rec, diffu_flow
+instance_id="rotated_vq"
+
+# Run the paper writing script
+python writing.py --research_field $research_field --instance_id $instance_id
+```
+
+2. Make the script executable and run it:
+
+```bash
+chmod +x run_paper_custom.sh
+./run_paper_custom.sh
+```
+
 ## Project Structure
 
-- `writing.py`: Main entry point that coordinates writing all sections
-- Section composition modules:
-  - `methodology_composing_using_template.py`
-  - `related_work_composing_using_template.py`
-  - `experiments_composing.py`
-  - `introduction_composing.py`
-  - `conclusion_composing.py`
-  - `abstract_composing.py`
-- `tex_output/`: Generated LaTeX files and compiled PDFs
-- `[research_field]/[instance_id]/`: Project-specific files
-  - `cache_1/agents/`: Agent configurations and outputs
-  - `workplace/`: Working directory for paper generation
+The Paper Agent architecture follows a modular design with specialized components for each section of an academic paper.
+
+```mermaid
+graph TD
+    writing[writing.py] --> methodology[methodology_composing_using_template.py]
+    writing --> relatedwork[related_work_composing_using_template.py]
+    writing --> experiments[experiments_composing.py]
+    writing --> introduction[introduction_composing.py]
+    writing --> conclusion[conclusion_composing.py]
+    writing --> abstract[abstract_composing.py]
+    
+    methodology --> tex[LaTeX Output]
+    relatedwork --> tex
+    experiments --> tex
+    introduction --> tex
+    conclusion --> tex
+    abstract --> tex
+    
+    subgraph "Common Components"
+        section_composer[section_composer.py]
+        openai_utils[utils/openai_utils.py]
+        tex_writer[tex_writer.py]
+    end
+    
+    methodology -.- section_composer
+    relatedwork -.- section_composer
+    experiments -.- section_composer
+    introduction -.- section_composer
+    conclusion -.- section_composer
+    abstract -.- section_composer
+    
+    section_composer -.- openai_utils
+    tex -.- tex_writer
+```
+
+### Core Components
+
+- **Entry Point**
+  - `writing.py`: Main orchestrator that calls each composition module sequentially
+
+- **Base Classes**
+  - `section_composer.py`: Abstract base class with common utilities for all section composers
+
+- **Section Composition Modules**
+  - `methodology_composing_using_template.py`: Creates the methodology section with technical details
+  - `related_work_composing_using_template.py`: Generates the related work section
+  - `experiments_composing.py`: Builds the experiments section with results
+  - `introduction_composing.py`: Produces the introduction section
+  - `conclusion_composing.py`: Creates the conclusion section
+  - `abstract_composing.py`: Generates the abstract section
+
+- **LaTeX Handling**
+  - `tex_writer.py`: Complex LaTeX document management
+  - `tex_writer_simplified.py`: Streamlined LaTeX document generation
+  - `tex_output/`: Directory for generated LaTeX files and compiled PDFs
+
+- **Project Organization**
+  - `[research_field]/`: Research field directories (vq, gnn, rec, diffu_flow)
+    - `[instance_id]/`: Specific instances (e.g., rotated_vq)
+      - `cache_1/agents/`: Agent configurations and outputs
+      - `workplace/`: Working files for paper generation
+        - `project/`: Project-specific code and assets
+        - `papers/`: Related papers for citation
+    - `writing_templates/`: Templates for different section types
+    - `target_sections/`: Output directory for generated section content
+    - `[section]_checkpoints/`: Checkpoint files for section composition
+
+- **Execution Scripts**
+  - `run_paper_template.ps1`: PowerShell template for Windows
+  - `run_paper_template.sh`: Bash template for Ubuntu/macOS
+  - `run_paper_custom.ps1`: Custom PowerShell script with API keys
+  - `run_paper_custom.sh`: Custom Bash script with API keys
 
 ## Requirements
 

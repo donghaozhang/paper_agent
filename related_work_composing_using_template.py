@@ -8,6 +8,50 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.openai_utils import GPTClient
 from section_composer import SectionComposer, setup_logging
 
+'''
+# Related Work Composition Flow
+
+```mermaid
+graph TD
+    related_work_composing["related_work_composing()"] --> setup_logging[Setup Logging]
+    setup_logging --> composer[Create RelatedWorkComposer]
+    composer --> setup_paths[Setup Project Paths]
+    setup_paths --> compose_section[RelatedWorkComposer.compose_section()]
+    
+    compose_section --> read_agent_files[Read Agent Files]
+    compose_section --> read_related_papers[Read Related Papers]
+    compose_section --> structure_generation[Iterative Structure Generation]
+    
+    subgraph "Iterative Structure Generation"
+        structure_generation --> generate_or_revise[generate_or_revise_structure]
+        generate_or_revise --> write_temp_log[Write Temp Log]
+        write_temp_log --> save_checkpoint[Save Checkpoint]
+    end
+    
+    structure_generation --> subsection_detailization[Detailize Subsections]
+    
+    subgraph "Subsection Detailization"
+        subsection_detailization --> process_agent_content[Process Agent Content]
+        process_agent_content --> process_related_papers[Process Related Papers]
+        process_related_papers --> detailize_subsection[detailize_subsection]
+        detailize_subsection --> save_subsection_checkpoint[Save Subsection Checkpoint]
+    end
+    
+    subsection_detailization --> fuse_subsections[Fuse Subsections]
+    fuse_subsections --> final_checklist[Final Writing Checklist]
+    final_checklist --> save_final_output[Save Final Output]
+    
+    classDef process fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef io fill:#bbf,stroke:#333,stroke-width:2px;
+    
+    class compose_section,structure_generation,subsection_detailization,fuse_subsections,final_checklist process;
+    class read_agent_files,read_related_papers,save_final_output io;
+```
+
+This diagram shows the flow of the related work composition process. The process leverages both agent knowledge
+and related papers to generate a comprehensive literature review section.
+'''
+
 class RelatedWorkComposer(SectionComposer):
     def __init__(self, research_field: str, structure_iterations: int = 3):
         super().__init__(research_field, "related_work", structure_iterations)
