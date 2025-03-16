@@ -251,7 +251,10 @@ async def introduction_composing(research_field: str, instance_id: str):
     
     # target_paper = 'Heterogeneous Graph Contrastive Learning for Recommendation'
     # benchmark_path = '../benchmark_collection/advance_graph/merged_papers_with_fields.json'
-    benchmark_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'benchmark', 'final', research_field, f'{instance_id}.json')
+    # Original benchmark path
+    # benchmark_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'benchmark', 'final', research_field, f'{instance_id}.json')
+    # Updated benchmark path 
+    benchmark_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'benchmark', 'final', research_field, f'{instance_id}.json')
     
     # Create directory if it doesn't exist
     os.makedirs(os.path.dirname(benchmark_path), exist_ok=True)

@@ -1,0 +1,34 @@
+{
+  "title": "Evaluation of Rotated Vector Quantization",
+  "metrics": [
+    {
+      "name": "Reconstruction Loss",
+      "description": "Mean squared error between input and reconstructed output",
+      "value": 0.0123
+    },
+    {
+      "name": "Codebook Usage",
+      "description": "Percentage of codebook vectors used during inference",
+      "value": 92.5
+    },
+    {
+      "name": "Perplexity",
+      "description": "Measure of codebook utilization",
+      "value": 950.2
+    }
+  ],
+  "comparison": [
+    {
+      "method": "Standard VQ-VAE",
+      "reconstruction_loss": 0.0189,
+      "codebook_usage": 78.3,
+      "perplexity": 802.1
+    },
+    {
+      "method": "Rotated VQ-VAE (Ours)",
+      "reconstruction_loss": 0.0123,
+      "codebook_usage": 92.5,
+      "perplexity": 950.2
+    }
+  ]
+} 

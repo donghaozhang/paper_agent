@@ -23,3 +23,7 @@ ENV/
 *.blg
 *.out
 *.toc
+
+# Exclude target section tex files
+vq/target_sections/**/*.tex
+vq/methodology_composition.log

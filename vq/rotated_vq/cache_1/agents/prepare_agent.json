@@ -1,0 +1,9 @@
+{
+  "title": "Rotated Vector Quantization",
+  "description": "A method for improving Vector Quantized Variational AutoEncoders by addressing issues with gradient propagation through the non-differentiable vector quantization layer.",
+  "tasks": [
+    "Implement rotation and rescaling transformation",
+    "Develop gradient propagation method",
+    "Implement codebook management techniques"
+  ]
+} 

@@ -278,7 +278,7 @@ async def related_work_composing(research_field: str, instance_id: str):
     composer = RelatedWorkComposer(research_field=research_field)
     
     # Use local paths instead of hardcoded absolute paths
-    proj_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), research_field, instance_id)
+    proj_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), research_field, instance_id)
     
     # Create directories if they don't exist
     os.makedirs(proj_dir, exist_ok=True)
@@ -288,7 +288,8 @@ async def related_work_composing(research_field: str, instance_id: str):
         raise ValueError("No cache directory found")
     agent_dir = os.path.join(proj_dir, cache_dirs[-1], 'agents')
     
-    benchmark_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'benchmark', 'final', research_field, f'{instance_id}.json')
+    # Updated benchmark path
+    benchmark_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'benchmark', 'final', research_field, f'{instance_id}.json')
     papers_dir = os.path.join(proj_dir, 'workplace', 'papers')
     
     # Create directories if they don't exist

@@ -1,0 +1,49 @@
+{
+  "title": "Refined Experimental Analysis of Rotated Vector Quantization",
+  "datasets": [
+    {
+      "name": "CIFAR-10",
+      "type": "Image",
+      "samples": 60000,
+      "resolution": "32x32x3"
+    },
+    {
+      "name": "ImageNet",
+      "type": "Image",
+      "samples": 1281167,
+      "resolution": "256x256x3"
+    }
+  ],
+  "ablation_studies": [
+    {
+      "component": "Rotation Transformation",
+      "enabled": true,
+      "reconstruction_loss": 0.0123,
+      "codebook_usage": 92.5
+    },
+    {
+      "component": "Rotation Transformation",
+      "enabled": false,
+      "reconstruction_loss": 0.0189,
+      "codebook_usage": 78.3
+    },
+    {
+      "component": "EMA Updates",
+      "enabled": true,
+      "reconstruction_loss": 0.0123,
+      "codebook_usage": 92.5
+    },
+    {
+      "component": "EMA Updates",
+      "enabled": false,
+      "reconstruction_loss": 0.0145,
+      "codebook_usage": 85.2
+    }
+  ],
+  "visualizations": [
+    "Reconstruction quality comparison",
+    "Codebook usage distribution",
+    "Training loss curves",
+    "Perplexity over training iterations"
+  ]
+} 

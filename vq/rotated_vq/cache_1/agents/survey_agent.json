@@ -1,0 +1,14 @@
+{
+  "title": "Survey of Vector Quantization Methods",
+  "related_work": [
+    "Neural discrete representation learning",
+    "Straightening out the straight-through estimator",
+    "Estimating or propagating gradients through stochastic neurons",
+    "Vector-quantized image modeling with improved vqgan"
+  ],
+  "challenges": [
+    "Gradient propagation through non-differentiable quantization",
+    "Codebook collapse",
+    "Limited codebook utilization"
+  ]
+} 

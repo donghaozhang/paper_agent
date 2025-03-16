@@ -317,7 +317,7 @@ async def methodology_composing(research_field: str, instance_id: str):
     composer = MethodologyComposer(research_field=research_field, structure_iterations=1)
     
     # Use local paths instead of hardcoded absolute paths
-    proj_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), research_field, instance_id)
+    proj_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), research_field, instance_id)
     
     # Create directories if they don't exist
     os.makedirs(proj_dir, exist_ok=True)
@@ -335,7 +335,7 @@ async def methodology_composing(research_field: str, instance_id: str):
     os.makedirs(model_dir, exist_ok=True)
     
     # Create a benchmark directory if it doesn't exist
-    benchmark_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'benchmark', 'final', research_field)
+    benchmark_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'benchmark', 'final', research_field)
     os.makedirs(benchmark_dir, exist_ok=True)
     
     # Create a benchmark file if it doesn't exist

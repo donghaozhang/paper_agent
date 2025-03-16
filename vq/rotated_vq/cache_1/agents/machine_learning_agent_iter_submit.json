@@ -1,0 +1,37 @@
+{
+  "title": "Refined Rotated Vector Quantization Implementation",
+  "model_architecture": {
+    "encoder": {
+      "type": "ResNet",
+      "layers": [
+        {"filters": 64, "kernel_size": 3, "stride": 2},
+        {"filters": 128, "kernel_size": 3, "stride": 2},
+        {"filters": 256, "kernel_size": 3, "stride": 2}
+      ],
+      "residual_blocks": 4
+    },
+    "vector_quantizer": {
+      "codebook_size": 8192,
+      "embedding_dim": 256,
+      "commitment_cost": 0.25,
+      "use_rotation": true,
+      "use_ema_updates": true
+    },
+    "decoder": {
+      "type": "CNN Transpose with Attention",
+      "layers": [
+        {"filters": 128, "kernel_size": 3, "stride": 2},
+        {"filters": 64, "kernel_size": 3, "stride": 2},
+        {"filters": 3, "kernel_size": 3, "stride": 2}
+      ],
+      "attention_heads": 8
+    }
+  },
+  "training": {
+    "batch_size": 128,
+    "learning_rate": 0.0002,
+    "optimizer": "AdamW",
+    "epochs": 200,
+    "scheduler": "CosineAnnealingLR"
+  }
+} 
