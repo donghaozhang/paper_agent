@@ -27,3 +27,6 @@ ENV/
 # Exclude target section tex files
 vq/target_sections/**/*.tex
 vq/methodology_composition.log
+
+# Exclude tex_output directory (generated files)
+tex_output/
